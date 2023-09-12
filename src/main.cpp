@@ -2,7 +2,7 @@
 #include "Arvore_binaria.hpp"
 #include <chrono>
 
-#define NUM_SUGESTOES 4
+#define NUM_SUGESTOES 6
 
 int main() {
 
