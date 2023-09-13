@@ -10,6 +10,7 @@ int main() {
     string prefix = "../dataset/";
     string nomes;
     vector<string> caminhos;
+    vector<string> nome_arquivos;
 
     fstream arquivos(loc_nomes);
 
@@ -18,6 +19,7 @@ int main() {
             string caminho = prefix + nomes;
 
             caminhos.push_back(caminho);
+            nome_arquivos.push_back(nomes);
 
             caminho = "";
         }
@@ -26,62 +28,31 @@ int main() {
 
     }
 
-
+    unordered_set<string> Stopwords = LeStopwords("../dataset/stopwords.txt");
     vector<string> textos = LeTexto(caminhos);
 
-    string textos_concatenados = Concatena(textos);
+    vector<string> textos_tratados;
 
-    unordered_set<string> stopwords = LeStopwords("../dataset/stopwords.txt");
+    for (const auto &texto : textos) {
+        string texto_tratado = Tratamento(texto);
+        string texto_final = RemoveSW(texto_tratado, Stopwords);
 
-    string texto_tratado = Tratamento(textos_concatenados);
+        textos_tratados.push_back(texto_final);
 
-    string texto_semSW = RemoveSW(texto_tratado, stopwords);
-
-    unordered_map<string, int> frequencia = ContaFrequencia(texto_semSW);
-
-    //------------------------------------------------- arvore binaria
-
-    chrono::high_resolution_clock::time_point inicio_bt;
-    chrono::high_resolution_clock::time_point fim_bt;
-
-    inicio_bt = chrono::high_resolution_clock::now();
-
-    Arvore_binaria Binary_tree;
-
-    for (const auto &item : frequencia) {
-        Binary_tree.Inserir(item.first, item.second);
+        texto_tratado = "";
+        texto_final = "";
     }
 
+    vector<pair<string, string>> par_nome_texto;
 
-    // TESTE DA ESTRUTURA
-
-    // int frequenciaEncontrada;
-    // string palavraVerificar = "cria"; // Substitua com a palavra que você deseja verificar.
-
-    // if (Binary_tree.BuscarPalavra(palavraVerificar, frequenciaEncontrada)) {
-    //     cout << "Palavra encontrada na árvore com frequência: " << frequenciaEncontrada << endl;
-    // } else {
-    //     cout << "Palavra não encontrada na árvore." << endl;
-    // }
-
-    // FIM DO TESTE
-
-    string prefixo = "cod";
-
-    vector<string> sugestoes = Binary_tree.Recomendar_Palavras(prefixo, NUM_SUGESTOES);
-
-    cout << "Sugestão de palavras com base no prefixo " << prefixo << ":" << endl;
-    for(const string& sugestao : sugestoes){
-        cout << sugestao << endl;
+    for (int i = 0; i < textos_tratados.size(); i++) {
+        par_nome_texto.push_back(make_pair(nome_arquivos[i], textos_tratados[i]));
     }
 
-    fim_bt = chrono::high_resolution_clock::now();
+    string palavra_pesq;
+    cout << "Informe a palavra a ser pesquisada: ";
+    cin >> palavra_pesq; cout << endl << endl;
 
-    auto duracao = chrono::duration_cast<chrono::microseconds>(fim_bt - inicio_bt);
-
-    cout<<"Tempo total para execução do algoritmo utilizando arvore binária em microsegundos: "<<duracao.count()<< "ms" << endl;
-
-    // ------------------------------------------------------------------ fim arvore binaria
 
     return 0;
 }

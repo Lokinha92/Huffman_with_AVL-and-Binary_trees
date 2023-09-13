@@ -17,3 +17,5 @@ unordered_set<string> LeStopwords(const string& caminhoArquivo);
 string RemoveSW(const string& textoTratado, unordered_set<string>& stopwords);
 
 unordered_map<string, int> ContaFrequencia(const string& texto);
+
+bool NoTexto(const string& texto, const string& palavra);

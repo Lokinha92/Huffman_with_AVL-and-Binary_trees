@@ -19,15 +19,12 @@ class Arvore_binaria
 private:
     No* raiz;
     No* InserirRecursivamente(No* no, const string& palavra, int freq);
-    void BuscaPrefix(No* no, const string& prefix, vector<string>& sugestoes, int numsugestoes);
-    bool BuscarPalavraRecursivamente(No* no, const string& palavra, int& freqEncontrada);
+    bool BuscaRecursiva(No* no, const string& palavra, int& freqEncontrada);
 public:
     Arvore_binaria();
 
     void Inserir(const string& palavra, int freq);
-    vector<string> Recomendar_Palavras(const string& prefix, int numsugestoes);
     bool BuscarPalavra(const string& palavra, int& frequenciaEncontrada);
-    int CorrespondenciaComPrefixo(const string& sugestao, const string& prefixo);
     
 };
 
