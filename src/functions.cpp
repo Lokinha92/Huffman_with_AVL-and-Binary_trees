@@ -97,20 +97,14 @@ unordered_map<string, int> ContaFrequencia(const string& texto){
 }
 
 bool NoTexto(const string& texto, const string& palavra){
-
-    bool resposta;
-
     istringstream separador(texto);
+    string palavra_notxt;
 
-    string palavraNoTexto;
-
-    while(separador >> palavraNoTexto){
-        if (palavraNoTexto == palavra){
-            resposta = true;
-        } else{
-            resposta = false;
+    while(separador >> palavra_notxt){
+        if (palavra == palavra_notxt ){
+            return true;
         }
     }
 
-    return resposta;
+    return false;
 }

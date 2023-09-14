@@ -1,2 +1,6 @@
-teste.txt
-teste2.txt
+filosofia.txt
+filosofia2.txt
+globalizacao.txt
+politica.txt
+ti.txt
+ti2.txt

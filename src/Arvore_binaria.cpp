@@ -27,25 +27,31 @@ void Arvore_binaria::Inserir(const string& palavra, int freq){
 }
 
 bool Arvore_binaria::BuscaRecursiva(No* no, const string& palavra, int& freqEncontrada) {
-    if (no == nullptr) {
-        return false; // Palavra não encontrada na árvore.
+    if (no == NULL) {
+        return false;
     }
 
     int comparacao = palavra.compare(no->palavra);
 
     if (comparacao == 0) {
-        // A palavra foi encontrada na árvore.
         freqEncontrada = no->freq;
         return true;
     } else if (comparacao < 0) {
-        // A palavra pode estar na subárvore esquerda.
         return BuscaRecursiva(no->esq, palavra, freqEncontrada);
     } else {
-        // A palavra pode estar na subárvore direita.
         return BuscaRecursiva(no->dir, palavra, freqEncontrada);
     }
 }
 
 bool Arvore_binaria::BuscarPalavra(const string& palavra, int& frequenciaEncontrada){
     return BuscaRecursiva(raiz, palavra, frequenciaEncontrada);
+}
+
+void Arvore_binaria::Imprimir(No* no){
+    if(no != NULL){
+        
+        cout << no->palavra << " : " << no->freq << ", ";
+        Imprimir(no->esq);
+        Imprimir(no->dir);
+    }
 }
