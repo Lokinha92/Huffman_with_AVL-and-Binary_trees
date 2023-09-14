@@ -1,0 +1,8 @@
+ A palavra filosofia foi encontrada no arquivo: filosofia.txt
+
+A palavra filosofia aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ ]
+------------------------------------------------
+

@@ -1,6 +1,9 @@
 #include "functions.hpp"
 #include "Arvore_binaria.hpp"
+#include "HeapMAX.hpp"
 #include <chrono>
+
+#define NUM_SUGESTOES 5
 
 int main() {
 
@@ -47,44 +50,63 @@ int main() {
         par_nome_texto.push_back(make_pair(nome_arquivos[i], textos_tratados[i]));
     }
 
-    string palavra_pesq;
-    cout << "Informe a palavra a ser pesquisada: ";
-    cin >> palavra_pesq; cout << endl << endl;
+    fstream palavras("../dataset/palavra.txt");
 
-    auto inicio_bt = chrono::high_resolution_clock::now();
-    for (const auto &par : par_nome_texto) {
-        if (NoTexto(par.second, palavra_pesq)) {
-            cout << " A palavra " << palavra_pesq << " foi encontrada no arquivo: " << par.first << endl << endl;
+    if (palavras.is_open()) {
+        string palavra_pesq;
 
-            unordered_map<string, int> frequencia = ContaFrequencia(par.second);
-            Arvore_binaria Binary_tree = Arvore_binaria();
+        while (palavras >> palavra_pesq) {
+            for (const auto &par : par_nome_texto) {
+                if (NoTexto(par.second, palavra_pesq)) {
 
-            for (const auto &item : frequencia) {
-                Binary_tree.Inserir(item.first, item.second);
+
+                    unordered_map<string, int> frequencia = ContaFrequencia(par.second);
+
+                    int freq_encontrada = 0;
+
+                    if (frequencia.find(palavra_pesq) != frequencia.end()) {
+                        freq_encontrada = frequencia[palavra_pesq];
+                    }
+
+                    cout << " A palavra " << palavra_pesq << " foi encontrada no arquivo: " << par.first << endl << endl;
+                    cout << "A palavra " << palavra_pesq << " aparece " << freq_encontrada << " vezes no arquivo" << endl;
+
+                    // ^^^ verifica se a palavra está no texto e se tiver mostra em que texto foi encontrado, e a freq.
+
+                    HeapMAX Heap;
+
+                    for (const auto &item : frequencia) {
+                        Heap.inserir(DataPair(item.first, item.second));
+                    }
+
+                    Heap.RemoveSugestao(palavra_pesq, Heap, NUM_SUGESTOES);
+
+                    // ^^^ monta a heap e remove a palavra pesq das k mais freq se ela tiver lá
+
+                    Arvore_binaria Binary_tree = Arvore_binaria();
+
+                    for (int i = 0; i < NUM_SUGESTOES && !Heap.Vazia(); ++i) {
+                        DataPair pair = Heap.PesquisaMAX();
+                        Binary_tree.Inserir(pair.palavra, pair.freq);
+                    }
+
+                    Heap.cleanHEAP(Heap);
+
+                    // joga os k mais frequentes pra arvore e limpa a heap ^^^
+
+                    frequencia.clear();
+
+                    cout << "\nArvore Binária em Pré-Ordem: " << endl;
+                    cout << "[ ";
+                    Binary_tree.Imprimir(Binary_tree.raiz);
+                    cout << "]" << endl;
+
+                    cout << "------------------------------------------------" << endl << endl;
+                }
             }
-
-            int freq_encontrada = 0;
-            if(Binary_tree.BuscarPalavra(palavra_pesq, freq_encontrada)){
-                cout << " A palavra " << palavra_pesq << " aparece " << freq_encontrada << " vezes no arquivo" << endl << endl;
-            }
-
-            freq_encontrada = 0;
-            frequencia.clear();
-
-            cout << "Arvore Binária em Pré-Ordem: " << endl;
-            cout << "[ ";
-            Binary_tree.Imprimir(Binary_tree.raiz);
-            cout << "]" << endl;
-            cout << "----------------------------------------------------" << endl << endl;
         }
+
+        palavras.close();
     }
-    auto fim_bt = chrono::high_resolution_clock::now();
-
-    auto duracao = chrono::duration_cast<chrono::milliseconds>(fim_bt - inicio_bt);
-    cout << "Tempo decorrido: " << duracao.count() << " ms" << endl;
-
-
-
-
     return 0;
 }

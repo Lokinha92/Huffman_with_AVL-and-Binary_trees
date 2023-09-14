@@ -1,0 +1,8 @@
+ A palavra codificação foi encontrada no arquivo: ti.txt
+
+A palavra codificação aparece 66 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ ]
+------------------------------------------------
+

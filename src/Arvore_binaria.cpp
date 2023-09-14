@@ -4,19 +4,19 @@ Arvore_binaria::Arvore_binaria(){
     raiz = NULL;
 }
 
-No* Arvore_binaria::InserirRecursivamente(No* no, const string& palavra, int freq){
-    if(no == NULL){
-        return new No{palavra,freq};
+No* Arvore_binaria::InserirRecursivamente(No* no, const string& palavra, int freq) {
+    if (no == NULL) {
+        return new No{palavra, freq};
     }
 
-    int compara_palavra = palavra.compare(no->palavra);
+    int score = freq - (2 * palavra.length());
 
-    if(compara_palavra < 0){
+    int compara_score = score - (no->freq - (2 * no->palavra.length()));
+
+    if (compara_score <= 0) {
         no->esq = InserirRecursivamente(no->esq, palavra, freq);
-    } else if(compara_palavra > 0){
+    } else {
         no->dir = InserirRecursivamente(no->dir, palavra, freq);
-    } else{
-        no->freq = freq;
     }
 
     return no;
@@ -47,9 +47,8 @@ bool Arvore_binaria::BuscarPalavra(const string& palavra, int& frequenciaEncontr
     return BuscaRecursiva(raiz, palavra, frequenciaEncontrada);
 }
 
-void Arvore_binaria::Imprimir(No* no){
-    if(no != NULL){
-        
+void Arvore_binaria::Imprimir(No* no) {
+    if (no != NULL) {
         cout << no->palavra << " : " << no->freq << ", ";
         Imprimir(no->esq);
         Imprimir(no->dir);
