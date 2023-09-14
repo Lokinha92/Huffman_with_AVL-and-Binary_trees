@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <fstream>
 using namespace std;
 
 struct No {
@@ -25,7 +26,7 @@ public:
 
     void Inserir(const string& palavra, int freq);
     bool BuscarPalavra(const string& palavra, int& frequenciaEncontrada);
-    void Imprimir(No* no);
+    void Imprimir(No *no, ofstream &arquivo);
     
 };
 

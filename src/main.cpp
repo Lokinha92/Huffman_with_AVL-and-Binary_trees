@@ -7,6 +7,8 @@
 
 int main() {
 
+    Apaga_output("../output");
+
     string loc_nomes = "../dataset/nome_txt.txt";
     string prefix = "../dataset/";
     string nomes;
@@ -68,8 +70,6 @@ int main() {
                         freq_encontrada = frequencia[palavra_pesq];
                     }
 
-                    cout << " A palavra " << palavra_pesq << " foi encontrada no arquivo: " << par.first << endl << endl;
-                    cout << "A palavra " << palavra_pesq << " aparece " << freq_encontrada << " vezes no arquivo" << endl;
 
                     // ^^^ verifica se a palavra está no texto e se tiver mostra em que texto foi encontrado, e a freq.
 
@@ -96,12 +96,22 @@ int main() {
 
                     frequencia.clear();
 
-                    cout << "\nArvore Binária em Pré-Ordem: " << endl;
-                    cout << "[ ";
-                    Binary_tree.Imprimir(Binary_tree.raiz);
-                    cout << "]" << endl;
+                    string caminho = "../output/output_" + par.first;
 
-                    cout << "------------------------------------------------" << endl << endl;
+                    ofstream output(caminho, ios::app);
+
+                    if (output.is_open()) {
+                        output << " A palavra " << palavra_pesq << " foi encontrada no arquivo: " << par.first << endl << endl;
+                        output << "A palavra " << palavra_pesq << " aparece " << freq_encontrada << " vezes no arquivo" << endl;
+                        output << "\nArvore Binária em Pré-Ordem: " << endl;
+                        output << "[ ";
+                        Binary_tree.Imprimir(Binary_tree.raiz, output);
+                        output << "]" << endl;
+
+                        output << "------------------------------------------------" << endl << endl;
+
+                        output.close();
+                    }
                 }
             }
         }

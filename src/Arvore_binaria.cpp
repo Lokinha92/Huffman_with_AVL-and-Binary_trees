@@ -1,12 +1,12 @@
 #include "Arvore_binaria.hpp"
 
-Arvore_binaria::Arvore_binaria(){
+Arvore_binaria::Arvore_binaria() {
     raiz = NULL;
 }
 
-No* Arvore_binaria::InserirRecursivamente(No* no, const string& palavra, int freq) {
+No *Arvore_binaria::InserirRecursivamente(No *no, const string &palavra, int freq) {
     if (no == NULL) {
-        return new No{palavra, freq};
+        return new No{ palavra, freq };
     }
 
     int score = freq - (2 * palavra.length());
@@ -22,11 +22,11 @@ No* Arvore_binaria::InserirRecursivamente(No* no, const string& palavra, int fre
     return no;
 }
 
-void Arvore_binaria::Inserir(const string& palavra, int freq){
+void Arvore_binaria::Inserir(const string &palavra, int freq) {
     raiz = InserirRecursivamente(raiz, palavra, freq);
 }
 
-bool Arvore_binaria::BuscaRecursiva(No* no, const string& palavra, int& freqEncontrada) {
+bool Arvore_binaria::BuscaRecursiva(No *no, const string &palavra, int &freqEncontrada) {
     if (no == NULL) {
         return false;
     }
@@ -43,14 +43,15 @@ bool Arvore_binaria::BuscaRecursiva(No* no, const string& palavra, int& freqEnco
     }
 }
 
-bool Arvore_binaria::BuscarPalavra(const string& palavra, int& frequenciaEncontrada){
+bool Arvore_binaria::BuscarPalavra(const string &palavra, int &frequenciaEncontrada) {
     return BuscaRecursiva(raiz, palavra, frequenciaEncontrada);
 }
-
-void Arvore_binaria::Imprimir(No* no) {
-    if (no != NULL) {
-        cout << no->palavra << " : " << no->freq << ", ";
-        Imprimir(no->esq);
-        Imprimir(no->dir);
+void Arvore_binaria::Imprimir(No *no, ofstream &arquivo) {
+    if (arquivo.is_open()) {
+        if (no != NULL) {
+            arquivo << no->palavra << " : " << no->freq << ", ";
+            Imprimir(no->esq, arquivo);
+            Imprimir(no->dir, arquivo);
+        }
     }
 }
