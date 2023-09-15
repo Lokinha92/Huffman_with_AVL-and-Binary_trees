@@ -1,5 +1,6 @@
 #include "functions.hpp"
 #include "Arvore_binaria.hpp"
+#include "Arvore_AVL.hpp"
 #include "HeapMAX.hpp"
 #include <chrono>
 
@@ -71,7 +72,7 @@ int main() {
                     }
 
 
-                    // ^^^ verifica se a palavra está no texto e se tiver mostra em que texto foi encontrado, e a freq.
+                    // ^^^ verifica se a palavra está no texto e armazena a frequencia
 
                     HeapMAX Heap;
 
@@ -84,17 +85,21 @@ int main() {
                     // ^^^ monta a heap e remove a palavra pesq das k mais freq se ela tiver lá
 
                     Arvore_binaria Binary_tree = Arvore_binaria();
+                    Arvore_AVL AVL_tree = Arvore_AVL();
 
                     for (int i = 0; i < NUM_SUGESTOES && !Heap.Vazia(); ++i) {
                         DataPair pair = Heap.PesquisaMAX();
                         Binary_tree.Inserir(pair.palavra, pair.freq);
+                        AVL_tree.Inserir(pair.palavra, pair.freq);
                     }
 
                     Heap.cleanHEAP(Heap);
 
-                    // joga os k mais frequentes pra arvore e limpa a heap ^^^
+                    // joga os k mais frequentes pras arvores e limpa a heap ^^^
 
                     frequencia.clear();
+
+                    // daqui pra baixo, só impressão do output
 
                     string caminho = "../output/output_" + par.first;
 
@@ -106,6 +111,11 @@ int main() {
                         output << "\nArvore Binária em Pré-Ordem: " << endl;
                         output << "[ ";
                         Binary_tree.Imprimir(Binary_tree.raiz, output);
+                        output << "]" << endl;
+
+                        output << "\nArvore AVL em Pré-Ordem: " << endl;
+                        output << "[ ";
+                        AVL_tree.Imprimir(AVL_tree.raiz, output);
                         output << "]" << endl;
 
                         output << "------------------------------------------------" << endl << endl;

@@ -4,13 +4,8 @@ A palavra teoria aparece 176 vezes no arquivo
 
 Arvore Binária em Pré-Ordem: 
 [ sujeito : 145, mundo : 134, condição : 134, priori : 125, modo : 129, ]
-------------------------------------------------
 
- A palavra filosofia foi encontrada no arquivo: filosofia.txt
-
-A palavra filosofia aparece 19 vezes no arquivo
-
-Arvore Binária em Pré-Ordem: 
-[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, modo : 129, ]
+Arvore AVL em Pré-Ordem: 
+[ mundo : 134, condição : 134, priori : 125, modo : 129, sujeito : 145, ]
 ------------------------------------------------
 
