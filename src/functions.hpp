@@ -7,6 +7,12 @@
 #include <sstream>
 #include <vector>
 #include <filesystem>
+#include "Arvore_AVL.hpp"
+#include "Arvore_binaria.hpp"
+#include "HeapMAX.hpp"
+#include <algorithm>
+#include <chrono>
+
 using namespace std;
 
 
@@ -23,3 +29,7 @@ unordered_map<string, int> ContaFrequencia(const string& texto);
 bool NoTexto(const string& texto, const string& palavra);
 
 void Apaga_output(const string& caminho);
+
+void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>>& par_nome_texto, const string& palavra_pesq, int NUM_SUGESTOES);
+
+void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>>& par_nome_texto, const string& palavra_pesq, int NUM_SUGESTOES);

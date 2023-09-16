@@ -1,0 +1,66 @@
+ A palavra codificação foi encontrada no arquivo: ti.txt
+
+A palavra codificação aparece 66 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, novas : 201, informações : 201, implantação : 266, utilização : 399, ]
+------------------------------------------------
+
+ A palavra computacional foi encontrada no arquivo: ti.txt
+
+A palavra computacional aparece 133 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, novas : 201, informações : 201, implantação : 266, utilização : 399, ]
+------------------------------------------------
+
+ A palavra sistemas foi encontrada no arquivo: ti.txt
+
+A palavra sistemas aparece 134 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, novas : 201, informações : 201, implantação : 266, utilização : 399, ]
+------------------------------------------------
+
+ A palavra operacionais foi encontrada no arquivo: ti.txt
+
+A palavra operacionais aparece 67 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, novas : 201, informações : 201, implantação : 266, utilização : 399, ]
+------------------------------------------------
+
+ A palavra redes foi encontrada no arquivo: ti.txt
+
+A palavra redes aparece 133 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, novas : 201, informações : 201, implantação : 266, utilização : 399, ]
+------------------------------------------------
+
+ A palavra internet foi encontrada no arquivo: ti.txt
+
+A palavra internet aparece 66 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, novas : 201, informações : 201, implantação : 266, utilização : 399, ]
+------------------------------------------------
+

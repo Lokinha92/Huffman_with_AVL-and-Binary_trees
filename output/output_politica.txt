@@ -1,0 +1,22 @@
+ A palavra estrutura foi encontrada no arquivo: politica.txt
+
+A palavra estrutura aparece 67 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ político : 400, políticas : 267, saúde : 201, atual : 201, assim : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ atual : 201, saúde : 201, assim : 201, políticas : 267, político : 400, ]
+------------------------------------------------
+
+ A palavra político foi encontrada no arquivo: politica.txt
+
+A palavra político aparece 400 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ políticas : 267, saúde : 201, melhoria : 201, atual : 201, assim : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ atual : 201, saúde : 201, melhoria : 201, assim : 201, políticas : 267, ]
+------------------------------------------------
+

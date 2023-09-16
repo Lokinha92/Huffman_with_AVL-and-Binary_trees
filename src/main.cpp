@@ -1,14 +1,9 @@
 #include "functions.hpp"
-#include "Arvore_binaria.hpp"
-#include "Arvore_AVL.hpp"
-#include "HeapMAX.hpp"
-#include <algorithm>
 #include <chrono>
 
 #define NUM_SUGESTOES 5
 
 int main() {
-
     Apaga_output("../output");
 
     string loc_nomes = "../dataset/nome_txt.txt";
@@ -30,7 +25,6 @@ int main() {
         }
 
         arquivos.close();
-
     }
 
     unordered_set<string> Stopwords = LeStopwords("../dataset/stopwords.txt");
@@ -58,87 +52,25 @@ int main() {
 
     if (palavras.is_open()) {
         string palavra_pesq;
+        double tempo_total_binaria = 0.0;
+        double tempo_total_avl = 0.0;
 
         while (palavras >> palavra_pesq) {
-            for (const auto &par : par_nome_texto) {
-                if (NoTexto(par.second, palavra_pesq)) {
+            auto start_binaria = chrono::high_resolution_clock::now();
+            ProcessarPalavrasArvoreBinaria(par_nome_texto, palavra_pesq, NUM_SUGESTOES);
+            auto end_binaria = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed_binaria = end_binaria - start_binaria;
+            tempo_total_binaria += elapsed_binaria.count();
 
-
-                    unordered_map<string, int> frequencia = ContaFrequencia(par.second);
-
-                    int freq_encontrada = 0;
-
-                    if (frequencia.find(palavra_pesq) != frequencia.end()) {
-                        freq_encontrada = frequencia[palavra_pesq];
-                    }
-
-
-                    // ^^^ verifica se a palavra está no texto e armazena a frequencia
-
-                    HeapMAX Heap_bt;
-                    HeapMAX Heap_avl;
-
-                    for (const auto &item : frequencia) {
-                        Heap_bt.inserir(DataPair(item.first, item.second));
-                    }
-
-                    for (const auto &item : frequencia) {
-                        Heap_avl.inserir(DataPair(item.first, item.second));
-                    }
-
-
-                    Heap_bt.RemoveSugestao(palavra_pesq, Heap_bt, NUM_SUGESTOES);
-                    Heap_avl.RemoveSugestao(palavra_pesq, Heap_avl, NUM_SUGESTOES);
-
-                    // ^^^ monta a heap e remove a palavra pesq das k mais freq se ela tiver lá
-
-                    Arvore_binaria Binary_tree = Arvore_binaria();
-                    Arvore_AVL AVL_tree = Arvore_AVL();
-
-                    for (int i = 0; i < NUM_SUGESTOES && !Heap_bt.Vazia(); ++i) {
-                        DataPair pair_bt = Heap_bt.PesquisaMAX();
-                        Binary_tree.Inserir(pair_bt.palavra, pair_bt.freq);
-                    }
-
-                    for (int i = 0; i < NUM_SUGESTOES && !Heap_avl.Vazia(); ++i) {
-                        DataPair pair_avl = Heap_avl.PesquisaMAX();
-                        AVL_tree.Inserir(pair_avl.palavra, pair_avl.freq);
-                    }
-
-
-                    Heap_bt.cleanHEAP(Heap_bt);
-                    Heap_avl.cleanHEAP(Heap_avl);
-
-                    // joga os k mais frequentes pras arvores e limpa a heap ^^^
-
-                    frequencia.clear();
-
-                    // daqui pra baixo, só impressão do output
-
-                    string caminho = "../output/output_" + par.first;
-
-                    ofstream output(caminho, ios::app);
-
-                    if (output.is_open()) {
-                        output << " A palavra " << palavra_pesq << " foi encontrada no arquivo: " << par.first << endl << endl;
-                        output << "A palavra " << palavra_pesq << " aparece " << freq_encontrada << " vezes no arquivo" << endl;
-                        output << "\nArvore Binária em Pré-Ordem: " << endl;
-                        output << "[ ";
-                        Binary_tree.Imprimir(Binary_tree.raiz, output);
-                        output << "]" << endl;
-
-                        output << "\nArvore AVL em Pré-Ordem: " << endl;
-                        output << "[ ";
-                        AVL_tree.Imprimir(AVL_tree.raiz, output);
-                        output << "]" << endl;
-
-                        output << "------------------------------------------------" << endl << endl;
-
-                        output.close();
-                    }
-                }
-            }
+            auto start_avl = chrono::high_resolution_clock::now();
+            ProcessarPalavrasArvoreAVL(par_nome_texto, palavra_pesq, NUM_SUGESTOES);
+            auto end_avl = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed_avl = end_avl - start_avl;
+            tempo_total_avl += elapsed_avl.count();
         }
+
+        cout << "Tempo total decorrido com Árvore Binária: " << tempo_total_binaria << " segundos" << endl;
+        cout << "Tempo total decorrido com Árvore AVL: " << tempo_total_avl << " segundos" << endl;
 
         palavras.close();
     }

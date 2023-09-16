@@ -1,11 +1,121 @@
- A palavra texto foi encontrada no arquivo: filosofia.txt
+ A palavra teoria foi encontrada no arquivo: filosofia.txt
 
-A palavra texto aparece 19 vezes no arquivo
+A palavra teoria aparece 176 vezes no arquivo
 
 Arvore Binária em Pré-Ordem: 
-[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, ]
+[ sujeito : 145, mundo : 134, condição : 134, priori : 125, modo : 129, ]
 
 Arvore AVL em Pré-Ordem: 
-[ sujeito : 145, mundo : 134, condição : 134, teoria : 176, ]
+[ mundo : 134, condição : 134, priori : 125, modo : 129, sujeito : 145, ]
+------------------------------------------------
+
+ A palavra filosofia foi encontrada no arquivo: filosofia.txt
+
+A palavra filosofia aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ condição : 134, sujeito : 145, mundo : 134, modo : 129, teoria : 176, ]
+------------------------------------------------
+
+ A palavra estrutura foi encontrada no arquivo: filosofia.txt
+
+A palavra estrutura aparece 32 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ condição : 134, sujeito : 145, mundo : 134, modo : 129, teoria : 176, ]
+------------------------------------------------
+
+ A palavra linguagem foi encontrada no arquivo: filosofia.txt
+
+A palavra linguagem aparece 44 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ condição : 134, sujeito : 145, mundo : 134, modo : 129, teoria : 176, ]
+------------------------------------------------
+
+ A palavra sistemas foi encontrada no arquivo: filosofia.txt
+
+A palavra sistemas aparece 34 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ condição : 134, sujeito : 145, mundo : 134, modo : 129, teoria : 176, ]
+------------------------------------------------
+
+ A palavra internet foi encontrada no arquivo: filosofia.txt
+
+A palavra internet aparece 10 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ condição : 134, sujeito : 145, mundo : 134, modo : 129, teoria : 176, ]
+------------------------------------------------
+
+ A palavra político foi encontrada no arquivo: filosofia.txt
+
+A palavra político aparece 36 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ condição : 134, sujeito : 145, mundo : 134, modo : 129, teoria : 176, ]
+------------------------------------------------
+
+ A palavra religioso foi encontrada no arquivo: filosofia.txt
+
+A palavra religioso aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ condição : 134, sujeito : 145, mundo : 134, modo : 129, teoria : 176, ]
+------------------------------------------------
+
+ A palavra direito foi encontrada no arquivo: filosofia.txt
+
+A palavra direito aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ condição : 134, sujeito : 145, mundo : 134, modo : 129, teoria : 176, ]
+------------------------------------------------
+
+ A palavra constituição foi encontrada no arquivo: filosofia.txt
+
+A palavra constituição aparece 8 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ condição : 134, sujeito : 145, mundo : 134, modo : 129, teoria : 176, ]
+------------------------------------------------
+
+ A palavra normativa foi encontrada no arquivo: filosofia.txt
+
+A palavra normativa aparece 38 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ condição : 134, sujeito : 145, mundo : 134, modo : 129, teoria : 176, ]
 ------------------------------------------------
 

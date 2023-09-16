@@ -133,3 +133,94 @@ void Apaga_output(const string &caminho) {
         cerr << "Erro ao excluir itens da pasta de output: " << ex.what() << endl;
     }
 }
+
+void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>>& par_nome_texto, const string& palavra_pesq, int NUM_SUGESTOES) {
+    for (const auto &par : par_nome_texto) {
+        if (NoTexto(par.second, palavra_pesq)) {
+            unordered_map<string, int> frequencia = ContaFrequencia(par.second);
+            int freq_encontrada = 0;
+
+            if (frequencia.find(palavra_pesq) != frequencia.end()) {
+                freq_encontrada = frequencia[palavra_pesq];
+            }
+
+            HeapMAX Heap_bt;
+
+            for (const auto &item : frequencia) {
+                Heap_bt.inserir(DataPair(item.first, item.second));
+            }
+
+            Heap_bt.RemoveSugestao(palavra_pesq, Heap_bt, NUM_SUGESTOES);
+
+            Arvore_binaria Binary_tree = Arvore_binaria();
+
+            for (int i = 0; i < NUM_SUGESTOES && !Heap_bt.Vazia(); ++i) {
+                DataPair pair_bt = Heap_bt.PesquisaMAX();
+                Binary_tree.Inserir(pair_bt.palavra, pair_bt.freq);
+            }
+
+            Heap_bt.cleanHEAP(Heap_bt);
+
+            frequencia.clear();
+
+            string caminho = "../output/output_" + par.first;
+
+            ofstream output(caminho, ios::app);
+
+            if (output.is_open()) {
+                output << " A palavra " << palavra_pesq << " foi encontrada no arquivo: " << par.first << endl << endl;
+                output << "A palavra " << palavra_pesq << " aparece " << freq_encontrada << " vezes no arquivo" << endl;
+                output << "\nArvore Binária em Pré-Ordem: " << endl;
+                output << "[ ";
+                Binary_tree.Imprimir(Binary_tree.raiz, output);
+                output << "]" << endl << endl;;
+                output.close();
+            }
+        }
+    }
+}
+
+void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>>& par_nome_texto, const string& palavra_pesq, int NUM_SUGESTOES) {
+    for (const auto &par : par_nome_texto) {
+        if (NoTexto(par.second, palavra_pesq)) {
+            unordered_map<string, int> frequencia = ContaFrequencia(par.second);
+            int freq_encontrada = 0;
+
+            if (frequencia.find(palavra_pesq) != frequencia.end()) {
+                freq_encontrada = frequencia[palavra_pesq];
+            }
+
+            HeapMAX Heap_avl;
+
+            for (const auto &item : frequencia) {
+                Heap_avl.inserir(DataPair(item.first, item.second));
+            }
+
+            Heap_avl.RemoveSugestao(palavra_pesq, Heap_avl, NUM_SUGESTOES);
+
+            Arvore_AVL AVL_tree = Arvore_AVL();
+
+            for (int i = 0; i < NUM_SUGESTOES && !Heap_avl.Vazia(); ++i) {
+                DataPair pair_avl = Heap_avl.PesquisaMAX();
+                AVL_tree.Inserir(pair_avl.palavra, pair_avl.freq);
+            }
+
+            Heap_avl.cleanHEAP(Heap_avl);
+
+            frequencia.clear();
+
+            string caminho = "../output/output_" + par.first;
+
+            ofstream output(caminho, ios::app);
+
+            if (output.is_open()) {
+                output << "Arvore AVL em Pré-Ordem: " << endl;
+                output << "[ ";
+                AVL_tree.Imprimir(AVL_tree.raiz, output);
+                output << "]" << endl;
+                output << "------------------------------------------------" << endl << endl;
+                output.close();
+            }
+        }
+    }
+}

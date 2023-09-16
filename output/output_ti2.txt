@@ -1,0 +1,66 @@
+ A palavra codificação foi encontrada no arquivo: ti2.txt
+
+A palavra codificação aparece 66 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, ti : 201, aumento : 201, implantação : 267, utilização : 400, ]
+------------------------------------------------
+
+ A palavra computacional foi encontrada no arquivo: ti2.txt
+
+A palavra computacional aparece 133 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, ti : 201, aumento : 201, implantação : 267, utilização : 400, ]
+------------------------------------------------
+
+ A palavra sistemas foi encontrada no arquivo: ti2.txt
+
+A palavra sistemas aparece 133 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, ti : 201, aumento : 201, implantação : 267, utilização : 400, ]
+------------------------------------------------
+
+ A palavra operacionais foi encontrada no arquivo: ti2.txt
+
+A palavra operacionais aparece 67 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, ti : 201, aumento : 201, implantação : 267, utilização : 400, ]
+------------------------------------------------
+
+ A palavra redes foi encontrada no arquivo: ti2.txt
+
+A palavra redes aparece 134 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, ti : 201, aumento : 201, implantação : 267, utilização : 400, ]
+------------------------------------------------
+
+ A palavra internet foi encontrada no arquivo: ti2.txt
+
+A palavra internet aparece 67 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ segurança : 268, ti : 201, aumento : 201, implantação : 267, utilização : 400, ]
+------------------------------------------------
+
