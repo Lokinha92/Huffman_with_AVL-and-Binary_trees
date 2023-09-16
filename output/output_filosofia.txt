@@ -1,11 +1,11 @@
- A palavra teoria foi encontrada no arquivo: filosofia.txt
+ A palavra texto foi encontrada no arquivo: filosofia.txt
 
-A palavra teoria aparece 176 vezes no arquivo
+A palavra texto aparece 19 vezes no arquivo
 
 Arvore Binária em Pré-Ordem: 
-[ sujeito : 145, mundo : 134, condição : 134, priori : 125, modo : 129, ]
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, ]
 
 Arvore AVL em Pré-Ordem: 
-[ mundo : 134, condição : 134, priori : 125, modo : 129, sujeito : 145, ]
+[ sujeito : 145, mundo : 134, condição : 134, teoria : 176, ]
 ------------------------------------------------
 
