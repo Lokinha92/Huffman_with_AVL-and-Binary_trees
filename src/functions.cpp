@@ -29,16 +29,6 @@ vector<string> LeTexto(vector<string> entradas) {
     return textos;
 }
 
-string Concatena(vector<string> textos) {
-    string textos_concatenados;
-
-    for (int i = 0; i < textos.size(); i++) {
-        textos_concatenados += textos[i] + "\n";
-    }
-
-    return textos_concatenados;
-}
-
 string Tratamento(const string &texto) {
     string Texto_tratado = texto;
 
@@ -90,10 +80,28 @@ unordered_map<string, int> ContaFrequencia(const string &texto) {
     string palavra;
 
     while (separador >> palavra) {
-        palavras[palavra]++;
+        if (palavras.find(palavra) == palavras.end()) {
+            palavras[palavra] = 1;
+        } else {
+            palavras[palavra]++;
+        }
     }
 
     return palavras;
+}
+
+unordered_map<char, int> ContaFrequencia_char(const string &texto) {
+    unordered_map < char, int > caracteres;
+
+    for (char c : texto) {
+        if (caracteres.find(c) == caracteres.end()) {
+            caracteres[c] = 1;
+        } else {
+            caracteres[c]++;
+        }
+    }
+
+    return caracteres;
 }
 
 bool NoTexto(const string &texto, const string &palavra) {
@@ -127,14 +135,15 @@ void Apaga_output(const string &caminho) {
                 fs::remove_all(entry);
             }
         }
-        
+
         cout << "Itens da pasta excluídos com sucesso! Execução começando..." << endl;
-    } catch (const exception &ex) {
+    }
+    catch (const exception &ex) {
         cerr << "Erro ao excluir itens da pasta de output: " << ex.what() << endl;
     }
 }
 
-void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>>& par_nome_texto, const string& palavra_pesq, int NUM_SUGESTOES) {
+void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>> &par_nome_texto, const string &palavra_pesq, int NUM_SUGESTOES) {
     for (const auto &par : par_nome_texto) {
         if (NoTexto(par.second, palavra_pesq)) {
             unordered_map<string, int> frequencia = ContaFrequencia(par.second);
@@ -180,7 +189,7 @@ void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>>& par_nome
     }
 }
 
-void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>>& par_nome_texto, const string& palavra_pesq, int NUM_SUGESTOES) {
+void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>> &par_nome_texto, const string &palavra_pesq, int NUM_SUGESTOES) {
     for (const auto &par : par_nome_texto) {
         if (NoTexto(par.second, palavra_pesq)) {
             unordered_map<string, int> frequencia = ContaFrequencia(par.second);
@@ -221,6 +230,57 @@ void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>>& par_nome_tex
                 output << "------------------------------------------------" << endl << endl;
                 output.close();
             }
+        }
+    }
+}
+
+void ProcessarPalavrasHuffman(const vector<pair<string, string>> &par_nome_texto, const string &palavra_pesq, int NUM_SUGESTOES) {
+    for (const auto &par : par_nome_texto) {
+        if (NoTexto(par.second, palavra_pesq)) {
+            unordered_map<string, int> frequencia = ContaFrequencia(par.second);
+            int freq_encontrada = 0;
+
+            if (frequencia.find(palavra_pesq) != frequencia.end()) {
+                freq_encontrada = frequencia[palavra_pesq];
+            }
+
+            HeapMAX Heap_huff;
+
+            for (const auto &item : frequencia) {
+                Heap_huff.inserir(DataPair(item.first, item.second));
+            }
+
+            Heap_huff.RemoveSugestao(palavra_pesq, Heap_huff, NUM_SUGESTOES);
+
+            unordered_map<char, int> freq_char = ContaFrequencia_char(par.second);
+
+            NoHuffmann *raiz = ConstruirArvore(freq_char);
+
+            unordered_map<char, string> codigos;
+            gerarCodigosHuffman(raiz, "", codigos);
+
+            string caminho = "../output/output_" + par.first;
+
+            ofstream output(caminho, ios::app);
+
+            if (output.is_open()) {
+                output << NUM_SUGESTOES << " palavras mais frequentes, seguidas da sua codificação: " << endl;
+
+                for (int i = 0; i < NUM_SUGESTOES && !Heap_huff.Vazia(); i++) {
+                    DataPair pair_huff = Heap_huff.PesquisaMAX();
+                    string codigo_pal = Codificar(pair_huff.palavra, codigos);
+
+                    output << pair_huff.palavra << " : " << codigo_pal << endl;
+                }
+
+                output << "------------------------------------------------" << endl << endl;
+                output.close();
+            }
+
+            frequencia.clear();
+            Heap_huff.cleanHEAP(Heap_huff);
+            freq_char.clear();
+            codigos.clear();
         }
     }
 }

@@ -54,6 +54,7 @@ int main() {
         string palavra_pesq;
         double tempo_total_binaria = 0.0;
         double tempo_total_avl = 0.0;
+        double tempo_total_huff = 0.0;
 
         while (palavras >> palavra_pesq) {
             auto start_binaria = chrono::high_resolution_clock::now();
@@ -67,10 +68,17 @@ int main() {
             auto end_avl = chrono::high_resolution_clock::now();
             chrono::duration<double> elapsed_avl = end_avl - start_avl;
             tempo_total_avl += elapsed_avl.count();
+
+            auto start_huff = chrono::high_resolution_clock::now();
+            ProcessarPalavrasHuffman(par_nome_texto, palavra_pesq, NUM_SUGESTOES);
+            auto end_huff = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed_huff = end_huff - start_huff;
+            tempo_total_huff += elapsed_huff.count();
         }
 
         cout << "Tempo total decorrido com Árvore Binária: " << tempo_total_binaria << " segundos" << endl;
         cout << "Tempo total decorrido com Árvore AVL: " << tempo_total_avl << " segundos" << endl;
+        cout << "Tempo total decorrido com Codificação de Huffman: " << tempo_total_huff << " segundos" << endl;
 
         palavras.close();
     }

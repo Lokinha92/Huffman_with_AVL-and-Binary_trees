@@ -9,6 +9,14 @@ Arvore AVL em Pré-Ordem:
 [ condição : 133, mundo : 144, priori : 144, modo : 129, sujeito : 149, ]
 ------------------------------------------------
 
+5 palavras mais frequentes, seguidas da sua codificação: 
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+modo : 100101101101101101
+------------------------------------------------
+
  A palavra filosofia foi encontrada no arquivo: filosofia2.txt
 
 A palavra filosofia aparece 19 vezes no arquivo
@@ -20,102 +28,11 @@ Arvore AVL em Pré-Ordem:
 [ sujeito : 149, priori : 144, condição : 133, mundo : 144, teoria : 192, ]
 ------------------------------------------------
 
- A palavra estrutura foi encontrada no arquivo: filosofia2.txt
-
-A palavra estrutura aparece 38 vezes no arquivo
-
-Arvore Binária em Pré-Ordem: 
-[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, ]
-
-Arvore AVL em Pré-Ordem: 
-[ sujeito : 149, priori : 144, condição : 133, mundo : 144, teoria : 192, ]
-------------------------------------------------
-
- A palavra linguagem foi encontrada no arquivo: filosofia2.txt
-
-A palavra linguagem aparece 51 vezes no arquivo
-
-Arvore Binária em Pré-Ordem: 
-[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, ]
-
-Arvore AVL em Pré-Ordem: 
-[ sujeito : 149, priori : 144, condição : 133, mundo : 144, teoria : 192, ]
-------------------------------------------------
-
- A palavra sistemas foi encontrada no arquivo: filosofia2.txt
-
-A palavra sistemas aparece 37 vezes no arquivo
-
-Arvore Binária em Pré-Ordem: 
-[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, ]
-
-Arvore AVL em Pré-Ordem: 
-[ sujeito : 149, priori : 144, condição : 133, mundo : 144, teoria : 192, ]
-------------------------------------------------
-
- A palavra internet foi encontrada no arquivo: filosofia2.txt
-
-A palavra internet aparece 19 vezes no arquivo
-
-Arvore Binária em Pré-Ordem: 
-[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, ]
-
-Arvore AVL em Pré-Ordem: 
-[ sujeito : 149, priori : 144, condição : 133, mundo : 144, teoria : 192, ]
-------------------------------------------------
-
- A palavra político foi encontrada no arquivo: filosofia2.txt
-
-A palavra político aparece 38 vezes no arquivo
-
-Arvore Binária em Pré-Ordem: 
-[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, ]
-
-Arvore AVL em Pré-Ordem: 
-[ sujeito : 149, priori : 144, condição : 133, mundo : 144, teoria : 192, ]
-------------------------------------------------
-
- A palavra religioso foi encontrada no arquivo: filosofia2.txt
-
-A palavra religioso aparece 19 vezes no arquivo
-
-Arvore Binária em Pré-Ordem: 
-[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, ]
-
-Arvore AVL em Pré-Ordem: 
-[ sujeito : 149, priori : 144, condição : 133, mundo : 144, teoria : 192, ]
-------------------------------------------------
-
- A palavra direito foi encontrada no arquivo: filosofia2.txt
-
-A palavra direito aparece 19 vezes no arquivo
-
-Arvore Binária em Pré-Ordem: 
-[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, ]
-
-Arvore AVL em Pré-Ordem: 
-[ sujeito : 149, priori : 144, condição : 133, mundo : 144, teoria : 192, ]
-------------------------------------------------
-
- A palavra constituição foi encontrada no arquivo: filosofia2.txt
-
-A palavra constituição aparece 7 vezes no arquivo
-
-Arvore Binária em Pré-Ordem: 
-[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, ]
-
-Arvore AVL em Pré-Ordem: 
-[ sujeito : 149, priori : 144, condição : 133, mundo : 144, teoria : 192, ]
-------------------------------------------------
-
- A palavra normativa foi encontrada no arquivo: filosofia2.txt
-
-A palavra normativa aparece 38 vezes no arquivo
-
-Arvore Binária em Pré-Ordem: 
-[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, ]
-
-Arvore AVL em Pré-Ordem: 
-[ sujeito : 149, priori : 144, condição : 133, mundo : 144, teoria : 192, ]
+5 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
 ------------------------------------------------
 
