@@ -1,0 +1,138 @@
+ A palavra codificação foi encontrada no arquivo: ti.txt
+
+A palavra codificação aparece 66 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ novas : 201, informações : 201, desenvolvimento : 200, melhor : 200, aumento : 200, dados : 201, segurança : 268, implantação : 266, ti : 201, utilização : 399, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+dados : 110110001101111101010
+ti : 01111100
+melhor : 101101111100011000011111100011
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+aumento : 00000100101101111011001111110
+------------------------------------------------
+
+ A palavra computacional foi encontrada no arquivo: ti.txt
+
+A palavra computacional aparece 133 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ novas : 201, informações : 201, desenvolvimento : 200, melhor : 200, aumento : 200, dados : 201, segurança : 268, implantação : 266, ti : 201, utilização : 399, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+dados : 110110001101111101010
+ti : 01111100
+melhor : 101101111100011000011111100011
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+aumento : 00000100101101111011001111110
+------------------------------------------------
+
+ A palavra sistemas foi encontrada no arquivo: ti.txt
+
+A palavra sistemas aparece 134 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ novas : 201, informações : 201, desenvolvimento : 200, melhor : 200, aumento : 200, dados : 201, segurança : 268, implantação : 266, ti : 201, utilização : 399, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+dados : 110110001101111101010
+ti : 01111100
+melhor : 101101111100011000011111100011
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+aumento : 00000100101101111011001111110
+------------------------------------------------
+
+ A palavra operacionais foi encontrada no arquivo: ti.txt
+
+A palavra operacionais aparece 67 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ novas : 201, informações : 201, desenvolvimento : 200, melhor : 200, aumento : 200, dados : 201, segurança : 268, implantação : 266, ti : 201, utilização : 399, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+dados : 110110001101111101010
+ti : 01111100
+melhor : 101101111100011000011111100011
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+aumento : 00000100101101111011001111110
+------------------------------------------------
+
+ A palavra redes foi encontrada no arquivo: ti.txt
+
+A palavra redes aparece 133 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ novas : 201, informações : 201, desenvolvimento : 200, melhor : 200, aumento : 200, dados : 201, segurança : 268, implantação : 266, ti : 201, utilização : 399, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+dados : 110110001101111101010
+ti : 01111100
+melhor : 101101111100011000011111100011
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+aumento : 00000100101101111011001111110
+------------------------------------------------
+
+ A palavra internet foi encontrada no arquivo: ti.txt
+
+A palavra internet aparece 66 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+Arvore AVL em Pré-Ordem: 
+[ novas : 201, informações : 201, desenvolvimento : 200, melhor : 200, aumento : 200, dados : 201, segurança : 268, implantação : 266, ti : 201, utilização : 399, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+dados : 110110001101111101010
+ti : 01111100
+melhor : 101101111100011000011111100011
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+aumento : 00000100101101111011001111110
+------------------------------------------------
+

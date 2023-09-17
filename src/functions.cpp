@@ -226,8 +226,7 @@ void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>> &par_nome_tex
                 output << "Arvore AVL em Pré-Ordem: " << endl;
                 output << "[ ";
                 AVL_tree.Imprimir(AVL_tree.raiz, output);
-                output << "]" << endl;
-                output << "------------------------------------------------" << endl << endl;
+                output << "]" << endl << endl;
                 output.close();
             }
         }

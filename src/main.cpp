@@ -1,7 +1,7 @@
 #include "functions.hpp"
 #include <chrono>
 
-#define NUM_SUGESTOES 5
+#define NUM_SUGESTOES 10
 
 int main() {
     Apaga_output("../output");

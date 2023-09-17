@@ -3,18 +3,22 @@
 A palavra teoria aparece 192 vezes no arquivo
 
 Arvore Binária em Pré-Ordem: 
-[ sujeito : 149, mundo : 144, priori : 144, condição : 133, modo : 129, ]
+[ sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, segundo : 114, pode : 115, deve : 114, modo : 129, ]
 
 Arvore AVL em Pré-Ordem: 
-[ condição : 133, mundo : 144, priori : 144, modo : 129, sujeito : 149, ]
-------------------------------------------------
+[ condição : 133, sistema : 119, pensamento : 115, segundo : 114, pode : 115, deve : 114, priori : 144, modo : 129, mundo : 144, sujeito : 149, ]
 
-5 palavras mais frequentes, seguidas da sua codificação: 
+10 palavras mais frequentes, seguidas da sua codificação: 
 sujeito : 10100010100110000000111101111101
 mundo : 10010001011000101101101
 priori : 0010001101111110101101111
 condição : 11000110110001011011111011111001001011110011101101
 modo : 100101101101101101
+sistema : 1010111110100111000100101110
+pode : 00100110110110000
+pensamento : 0010000010001010111010010000100001111101
+deve : 10110000001101000
+segundo : 10100001100110001011000101101101
 ------------------------------------------------
 
  A palavra filosofia foi encontrada no arquivo: filosofia2.txt
@@ -22,17 +26,228 @@ modo : 100101101101101101
 A palavra filosofia aparece 19 vezes no arquivo
 
 Arvore Binária em Pré-Ordem: 
-[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, ]
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
 
 Arvore AVL em Pré-Ordem: 
-[ sujeito : 149, priori : 144, condição : 133, mundo : 144, teoria : 192, ]
-------------------------------------------------
+[ sistema : 119, pensamento : 115, priori : 144, condição : 133, pode : 115, deve : 114, modo : 129, sujeito : 149, mundo : 144, teoria : 192, ]
 
-5 palavras mais frequentes, seguidas da sua codificação: 
+10 palavras mais frequentes, seguidas da sua codificação: 
 teoria : 01110001101011011111110
 sujeito : 10100010100110000000111101111101
 mundo : 10010001011000101101101
 priori : 0010001101111110101101111
 condição : 11000110110001011011111011111001001011110011101101
+modo : 100101101101101101
+sistema : 1010111110100111000100101110
+pode : 00100110110110000
+pensamento : 0010000010001010111010010000100001111101
+deve : 10110000001101000
+------------------------------------------------
+
+ A palavra estrutura foi encontrada no arquivo: filosofia2.txt
+
+A palavra estrutura aparece 38 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ sistema : 119, pensamento : 115, priori : 144, condição : 133, pode : 115, deve : 114, modo : 129, sujeito : 149, mundo : 144, teoria : 192, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+modo : 100101101101101101
+sistema : 1010111110100111000100101110
+pode : 00100110110110000
+pensamento : 0010000010001010111010010000100001111101
+deve : 10110000001101000
+------------------------------------------------
+
+ A palavra linguagem foi encontrada no arquivo: filosofia2.txt
+
+A palavra linguagem aparece 51 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ sistema : 119, pensamento : 115, priori : 144, condição : 133, pode : 115, deve : 114, modo : 129, sujeito : 149, mundo : 144, teoria : 192, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+modo : 100101101101101101
+sistema : 1010111110100111000100101110
+pode : 00100110110110000
+pensamento : 0010000010001010111010010000100001111101
+deve : 10110000001101000
+------------------------------------------------
+
+ A palavra sistemas foi encontrada no arquivo: filosofia2.txt
+
+A palavra sistemas aparece 37 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ sistema : 119, pensamento : 115, priori : 144, condição : 133, pode : 115, deve : 114, modo : 129, sujeito : 149, mundo : 144, teoria : 192, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+modo : 100101101101101101
+sistema : 1010111110100111000100101110
+pode : 00100110110110000
+pensamento : 0010000010001010111010010000100001111101
+deve : 10110000001101000
+------------------------------------------------
+
+ A palavra internet foi encontrada no arquivo: filosofia2.txt
+
+A palavra internet aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ sistema : 119, pensamento : 115, priori : 144, condição : 133, pode : 115, deve : 114, modo : 129, sujeito : 149, mundo : 144, teoria : 192, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+modo : 100101101101101101
+sistema : 1010111110100111000100101110
+pode : 00100110110110000
+pensamento : 0010000010001010111010010000100001111101
+deve : 10110000001101000
+------------------------------------------------
+
+ A palavra político foi encontrada no arquivo: filosofia2.txt
+
+A palavra político aparece 38 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ sistema : 119, pensamento : 115, priori : 144, condição : 133, pode : 115, deve : 114, modo : 129, sujeito : 149, mundo : 144, teoria : 192, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+modo : 100101101101101101
+sistema : 1010111110100111000100101110
+pode : 00100110110110000
+pensamento : 0010000010001010111010010000100001111101
+deve : 10110000001101000
+------------------------------------------------
+
+ A palavra religioso foi encontrada no arquivo: filosofia2.txt
+
+A palavra religioso aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ sistema : 119, pensamento : 115, priori : 144, condição : 133, pode : 115, deve : 114, modo : 129, sujeito : 149, mundo : 144, teoria : 192, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+modo : 100101101101101101
+sistema : 1010111110100111000100101110
+pode : 00100110110110000
+pensamento : 0010000010001010111010010000100001111101
+deve : 10110000001101000
+------------------------------------------------
+
+ A palavra direito foi encontrada no arquivo: filosofia2.txt
+
+A palavra direito aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ sistema : 119, pensamento : 115, priori : 144, condição : 133, pode : 115, deve : 114, modo : 129, sujeito : 149, mundo : 144, teoria : 192, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+modo : 100101101101101101
+sistema : 1010111110100111000100101110
+pode : 00100110110110000
+pensamento : 0010000010001010111010010000100001111101
+deve : 10110000001101000
+------------------------------------------------
+
+ A palavra constituição foi encontrada no arquivo: filosofia2.txt
+
+A palavra constituição aparece 7 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ sistema : 119, pensamento : 115, priori : 144, condição : 133, pode : 115, deve : 114, modo : 129, sujeito : 149, mundo : 144, teoria : 192, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+modo : 100101101101101101
+sistema : 1010111110100111000100101110
+pode : 00100110110110000
+pensamento : 0010000010001010111010010000100001111101
+deve : 10110000001101000
+------------------------------------------------
+
+ A palavra normativa foi encontrada no arquivo: filosofia2.txt
+
+A palavra normativa aparece 38 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+Arvore AVL em Pré-Ordem: 
+[ sistema : 119, pensamento : 115, priori : 144, condição : 133, pode : 115, deve : 114, modo : 129, sujeito : 149, mundo : 144, teoria : 192, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+modo : 100101101101101101
+sistema : 1010111110100111000100101110
+pode : 00100110110110000
+pensamento : 0010000010001010111010010000100001111101
+deve : 10110000001101000
 ------------------------------------------------
 
