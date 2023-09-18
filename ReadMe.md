@@ -29,3 +29,33 @@ Arvore (AVL ou Binaria) em Pré-ordem:
 (Y) palavras mais frequentes, seguidas da sua codificação: 
 palavra : codigo
 ...
+
+<h2 align = center>🌳 A ESTRUTURA DE ARVORE 🌳</h2>
+    A maioria dos métodos de armazenamento de dados vistos até agora, são métodos que armazenam dados de forma linear, ou seja, armazenam dados "um ao lado do outro" como listas encadeadas ou duplamente encadeadas.
+
+   <div align = center> <img align src = /img/lista.png> </div>
+
+   Para realizar uma busca em estruturas lineares, o custo, no pior caso, é de <b>O(n)</b>, ou seja, todos os elementos da estrutura serão visitados a fim de encontrar um certo elemento. O problema é que, para grandes conjuntos de dados, esse custo para pesquisa se torna inviável.
+
+   A fim de armazenar dados de forma mais eficiente para pesquisa, surgiram as estruturas de árvore.
+   As árvores são amplamente utilizadas para organizar e armazenar dados de maneira hierárquica. Elas consistem em um conjunto de elementos chamados "nós" que estão conectados por "arestas". Cada árvore tem um "nó raiz" a partir do qual todas as outras conexões se estendem, e os nós são organizados em níveis, com os nós mais próximos ao topo da árvore sendo chamados de "nós pai" e os nós abaixo deles sendo chamados de "nós filhos".
+
+   <div align = center> <img align src = /img/ArvoreEX.png> </div>
+
+   <h3 align = center>Arvore Binaria de pesquisa (BST)</h3>
+O método de inserção de elementos na árvore consiste em comparar o elemento a ser inserido com a raíz, e caso ele seja maior é inserido na sub-árvore direita, se não, é inserido na sub-árvore esquerda.
+Dessa forma, a árvore se torna uma árvore binária de pesquisa ou BST.
+
+   <div align = center> <img align src = /img/insere_bt.gif> </div>
+
+Dizemos que uma árvore está balanceada, quando todos os nós da árvore, exceto os nós do ultimo nível tem 2 filhos.
+
+Ao realizar uma busca em uma BST, o valor que está sendo procurado é comparado com o valor do nó raiz. Com base nessa comparação, é possível determinar em qual subárvore (esquerda ou direita) continuar a busca. Isso efetivamente divide o espaço de busca pela metade em cada etapa, pois metade dos elementos em cada comparação é descartado.
+
+ Para uma árvore balanceada, o custo de pesquisa se torna <b>O(log n)</b> que é um custo muito mais viável em termos de tempo.
+
+ Porém, no seu pior caso, a arovre binária de pesquisa pode ser montada em um formato como esse:
+
+<div align = center> <img align src = /img/piorcaso.png> </div>
+
+Tomemos como exemplo de elemento a ser buscado o 9. Observe que, primeiro, a estrutura não está balanceada, isso já interferiria no custo da busca, além disso, é possível perceber que, para chegar até o elemento alvo, é necessário percorrer toda a sub-árvore direita a partir da raiz, isso volta a fazer com que o custo da pesquisa volte a ser de <b>O(n)</b>.
