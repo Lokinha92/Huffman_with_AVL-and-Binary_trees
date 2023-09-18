@@ -58,4 +58,4 @@ Ao realizar uma busca em uma BST, o valor que está sendo procurado é comparado
 
 <div align = center> <img align src = /img/piorcaso.png> </div>
 
-Tomemos como exemplo de elemento a ser buscado o 9. Observe que, primeiro, a estrutura não está balanceada, isso já interferiria no custo da busca, além disso, é possível perceber que, para chegar até o elemento alvo, é necessário percorrer toda a sub-árvore direita a partir da raiz, isso volta a fazer com que o custo da pesquisa seja <b>O(n)</b>.
+Tomemos como exemplo de elemento a ser buscado o 9. Observe que, primeiro, a estrutura não está balanceada, isso já interferiria no custo da busca, além disso, é possível perceber que, para chegar até o elemento alvo, é necessário percorrer toda a sub-árvore direita a partir da raiz, isso faz com que o custo da pesquisa seja <b>O(n)</b>.
