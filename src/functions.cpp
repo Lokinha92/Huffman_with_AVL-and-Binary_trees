@@ -143,6 +143,32 @@ void Apaga_output(const string &caminho) {
     }
 }
 
+void Huff_bt(No *no, unordered_map<char, string> codigos, ofstream &arquivo) {
+    if (no == nullptr) {
+        return;
+    }
+
+    string codigo = Codificar(no->palavra, codigos);
+
+    arquivo << no->palavra << " : " << codigo << endl;
+
+    Huff_bt(no->esq, codigos, arquivo);
+    Huff_bt(no->dir, codigos, arquivo);
+}
+
+void Huff_AVL(No_AVL *no, unordered_map<char, string> codigos, ofstream &arquivo) {
+    if (no == nullptr) {
+        return;
+    }
+
+    string codigo = Codificar(no->palavra, codigos);
+
+    arquivo << no->palavra << " : " << codigo << endl;
+
+    Huff_AVL(no->esq, codigos, arquivo);
+    Huff_AVL(no->dir, codigos, arquivo);
+}
+
 void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>> &par_nome_texto, const string &palavra_pesq, int NUM_SUGESTOES) {
     for (const auto &par : par_nome_texto) {
         if (NoTexto(par.second, palavra_pesq)) {
@@ -172,19 +198,33 @@ void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>> &par_nome
 
             frequencia.clear();
 
-            string caminho = "../output/output_" + par.first;
+            unordered_map<char, int> freq_char = ContaFrequencia_char(par.second);
+
+            NoHuffmann *raiz = ConstruirArvore(freq_char);
+
+            unordered_map<char, string> codigos;
+            gerarCodigosHuffman(raiz, "", codigos);
+
+            string caminho = "../output/output_binario.txt";
 
             ofstream output(caminho, ios::app);
 
             if (output.is_open()) {
                 output << " A palavra " << palavra_pesq << " foi encontrada no arquivo: " << par.first << endl << endl;
-                output << "A palavra " << palavra_pesq << " aparece " << freq_encontrada << " vezes no arquivo" << endl;
-                output << "\nArvore Binária em Pré-Ordem: " << endl;
+                output << "A palavra " << palavra_pesq << " aparece " << freq_encontrada << " vezes no arquivo" << endl << endl;;
+                output << "Arvore Binária em Pré-Ordem: " << endl;
                 output << "[ ";
                 Binary_tree.Imprimir(Binary_tree.raiz, output);
-                output << "]" << endl << endl;;
+                output << "]" << endl << endl;
+
+                output << NUM_SUGESTOES << " palavras mais frequentes, seguidas da sua codificação: " << endl;
+                Huff_bt(Binary_tree.raiz, codigos, output);
+                output << "---------------------------------------------------------" << endl << endl;
                 output.close();
             }
+
+            freq_char.clear();
+            codigos.clear();
         }
     }
 }
@@ -218,39 +258,6 @@ void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>> &par_nome_tex
 
             frequencia.clear();
 
-            string caminho = "../output/output_" + par.first;
-
-            ofstream output(caminho, ios::app);
-
-            if (output.is_open()) {
-                output << "Arvore AVL em Pré-Ordem: " << endl;
-                output << "[ ";
-                AVL_tree.Imprimir(AVL_tree.raiz, output);
-                output << "]" << endl << endl;
-                output.close();
-            }
-        }
-    }
-}
-
-void ProcessarPalavrasHuffman(const vector<pair<string, string>> &par_nome_texto, const string &palavra_pesq, int NUM_SUGESTOES) {
-    for (const auto &par : par_nome_texto) {
-        if (NoTexto(par.second, palavra_pesq)) {
-            unordered_map<string, int> frequencia = ContaFrequencia(par.second);
-            int freq_encontrada = 0;
-
-            if (frequencia.find(palavra_pesq) != frequencia.end()) {
-                freq_encontrada = frequencia[palavra_pesq];
-            }
-
-            HeapMAX Heap_huff;
-
-            for (const auto &item : frequencia) {
-                Heap_huff.inserir(DataPair(item.first, item.second));
-            }
-
-            Heap_huff.RemoveSugestao(palavra_pesq, Heap_huff, NUM_SUGESTOES);
-
             unordered_map<char, int> freq_char = ContaFrequencia_char(par.second);
 
             NoHuffmann *raiz = ConstruirArvore(freq_char);
@@ -258,26 +265,24 @@ void ProcessarPalavrasHuffman(const vector<pair<string, string>> &par_nome_texto
             unordered_map<char, string> codigos;
             gerarCodigosHuffman(raiz, "", codigos);
 
-            string caminho = "../output/output_" + par.first;
+            string caminho = "../output/output_avl.txt";
 
             ofstream output(caminho, ios::app);
 
             if (output.is_open()) {
+                output << " A palavra " << palavra_pesq << " foi encontrada no arquivo: " << par.first << endl << endl;
+                output << "A palavra " << palavra_pesq << " aparece " << freq_encontrada << " vezes no arquivo" << endl << endl;;
+                output << "Arvore AVL em Pré-Ordem: " << endl;
+                output << "[ ";
+                AVL_tree.Imprimir(AVL_tree.raiz, output);
+                output << "]" << endl << endl;
+
                 output << NUM_SUGESTOES << " palavras mais frequentes, seguidas da sua codificação: " << endl;
-
-                for (int i = 0; i < NUM_SUGESTOES && !Heap_huff.Vazia(); i++) {
-                    DataPair pair_huff = Heap_huff.PesquisaMAX();
-                    string codigo_pal = Codificar(pair_huff.palavra, codigos);
-
-                    output << pair_huff.palavra << " : " << codigo_pal << endl;
-                }
-
-                output << "------------------------------------------------" << endl << endl;
+                Huff_AVL(AVL_tree.raiz, codigos, output);
+                output << "---------------------------------------------------------" << endl << endl;
                 output.close();
             }
 
-            frequencia.clear();
-            Heap_huff.cleanHEAP(Heap_huff);
             freq_char.clear();
             codigos.clear();
         }

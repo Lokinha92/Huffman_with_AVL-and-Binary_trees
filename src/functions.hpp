@@ -36,4 +36,6 @@ void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>>& par_nome
 
 void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>>& par_nome_texto, const string& palavra_pesq, int NUM_SUGESTOES);
 
-void ProcessarPalavrasHuffman(const vector<pair<string, string>>& par_nome_texto, const string& palavra_pesq, int NUM_SUGESTOES);
+void Huff_bt(No *no, unordered_map<char, string> codigos, ofstream &arquivo);
+
+

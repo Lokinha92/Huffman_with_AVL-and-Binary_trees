@@ -1,0 +1,780 @@
+ A palavra teoria foi encontrada no arquivo: filosofia.txt
+
+A palavra teoria aparece 176 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ sujeito : 145, mundo : 134, condição : 134, priori : 125, sistema : 115, pensamento : 115, segundo : 114, deve : 115, pode : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+sujeito : 101000101110011100000111001111101
+mundo : 10010001011000101101101
+condição : 11000110110001011011101011111001001011110011101101
+priori : 0010001101110110101101110
+sistema : 1010111010100111000100101111
+pensamento : 0010000010001010111110010000100001111101
+segundo : 10100001100110001011000101101101
+deve : 10110000001101000
+pode : 00100110110110000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra teoria foi encontrada no arquivo: filosofia2.txt
+
+A palavra teoria aparece 192 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, segundo : 114, pode : 115, deve : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+sistema : 1010111110100111000100101110
+pensamento : 0010000010001010111010010000100001111101
+segundo : 10100001100110001011000101101101
+pode : 00100110110110000
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra filosofia foi encontrada no arquivo: filosofia.txt
+
+A palavra filosofia aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, priori : 125, sistema : 115, pensamento : 115, segundo : 114, deve : 115, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011101111
+sujeito : 101000101110011100000111001111101
+mundo : 10010001011000101101101
+condição : 11000110110001011011101011111001001011110011101101
+priori : 0010001101110110101101110
+sistema : 1010111010100111000100101111
+pensamento : 0010000010001010111110010000100001111101
+segundo : 10100001100110001011000101101101
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra filosofia foi encontrada no arquivo: filosofia2.txt
+
+A palavra filosofia aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+sistema : 1010111110100111000100101110
+pensamento : 0010000010001010111010010000100001111101
+pode : 00100110110110000
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra codificação foi encontrada no arquivo: ti.txt
+
+A palavra codificação aparece 66 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+dados : 110110001101111101010
+melhor : 101101111100011000011111100011
+aumento : 00000100101101111011001111110
+ti : 01111100
+---------------------------------------------------------
+
+ A palavra codificação foi encontrada no arquivo: ti2.txt
+
+A palavra codificação aparece 66 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, informações : 200, hardware : 200, dados : 201, melhor : 201, assim : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111000011011111010111110
+segurança : 101011111101010001000110000001110111100001000
+implantação : 110010110001011000100000110111000101111000011011111010111110
+ti : 01111100
+aumento : 00000100101101111001101111110
+informações : 1100001110011101110011010110000101111000011011110011110011111010
+hardware : 1001100100001101101110011000100001101111
+dados : 110110001101111101010
+melhor : 101101111100011001100111100110
+assim : 00010101010110010110
+---------------------------------------------------------
+
+ A palavra estrutura foi encontrada no arquivo: filosofia.txt
+
+A palavra estrutura aparece 32 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, priori : 125, sistema : 115, pensamento : 115, segundo : 114, deve : 115, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011101111
+sujeito : 101000101110011100000111001111101
+mundo : 10010001011000101101101
+condição : 11000110110001011011101011111001001011110011101101
+priori : 0010001101110110101101110
+sistema : 1010111010100111000100101111
+pensamento : 0010000010001010111110010000100001111101
+segundo : 10100001100110001011000101101101
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra estrutura foi encontrada no arquivo: filosofia2.txt
+
+A palavra estrutura aparece 38 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+sistema : 1010111110100111000100101110
+pensamento : 0010000010001010111010010000100001111101
+pode : 00100110110110000
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra estrutura foi encontrada no arquivo: globalizacao.txt
+
+A palavra estrutura aparece 66 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ sentido : 200, processo : 200, importância : 134, informações : 134, estabelecimento : 134, pode : 134, quadros : 134, podemos : 134, modo : 134, assim : 199, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+sentido : 10011111011101101011110101110
+processo : 0011110001110110001111100110011110
+importância : 1011101000011111101000011011001110110010100111110001011000
+informações : 101101111101101111010001010000011001101010110010011011011111001
+estabelecimento : 111110010110000110111111111001011111110001011101001111011101101110
+pode : 001111110110101111
+quadros : 001101010010000011010100011101001
+podemos : 0011111101101011111010011101001
+modo : 101001110110101110
+assim : 00010011001101110100
+---------------------------------------------------------
+
+ A palavra estrutura foi encontrada no arquivo: politica.txt
+
+A palavra estrutura aparece 67 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ político : 400, políticas : 267, saúde : 201, melhoria : 201, eleitores : 199, processo : 198, sentido : 200, metas : 199, atual : 201, assim : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+político : 1000011101000111011001010001111011110001110
+políticas : 10000111010001110110010100011110111100011111001
+saúde : 100111111101110101011111001000
+melhoria : 10100000100011101001101110011010111111
+eleitores : 0001000100010110111111001100001001
+processo : 100000110111011000000100110011110
+sentido : 1001000001101111011110011110
+metas : 10100000011111111001
+atual : 11110111110101111110001
+assim : 111110011001101110100
+---------------------------------------------------------
+
+ A palavra linguagem foi encontrada no arquivo: filosofia.txt
+
+A palavra linguagem aparece 44 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, priori : 125, sistema : 115, pensamento : 115, segundo : 114, deve : 115, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011101111
+sujeito : 101000101110011100000111001111101
+mundo : 10010001011000101101101
+condição : 11000110110001011011101011111001001011110011101101
+priori : 0010001101110110101101110
+sistema : 1010111010100111000100101111
+pensamento : 0010000010001010111110010000100001111101
+segundo : 10100001100110001011000101101101
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra linguagem foi encontrada no arquivo: filosofia2.txt
+
+A palavra linguagem aparece 51 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+sistema : 1010111110100111000100101110
+pensamento : 0010000010001010111010010000100001111101
+pode : 00100110110110000
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra computacional foi encontrada no arquivo: ti.txt
+
+A palavra computacional aparece 133 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+dados : 110110001101111101010
+melhor : 101101111100011000011111100011
+aumento : 00000100101101111011001111110
+ti : 01111100
+---------------------------------------------------------
+
+ A palavra computacional foi encontrada no arquivo: ti2.txt
+
+A palavra computacional aparece 133 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, informações : 200, hardware : 200, dados : 201, melhor : 201, assim : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111000011011111010111110
+segurança : 101011111101010001000110000001110111100001000
+implantação : 110010110001011000100000110111000101111000011011111010111110
+ti : 01111100
+aumento : 00000100101101111001101111110
+informações : 1100001110011101110011010110000101111000011011110011110011111010
+hardware : 1001100100001101101110011000100001101111
+dados : 110110001101111101010
+melhor : 101101111100011001100111100110
+assim : 00010101010110010110
+---------------------------------------------------------
+
+ A palavra sistemas foi encontrada no arquivo: filosofia.txt
+
+A palavra sistemas aparece 34 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, priori : 125, sistema : 115, pensamento : 115, segundo : 114, deve : 115, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011101111
+sujeito : 101000101110011100000111001111101
+mundo : 10010001011000101101101
+condição : 11000110110001011011101011111001001011110011101101
+priori : 0010001101110110101101110
+sistema : 1010111010100111000100101111
+pensamento : 0010000010001010111110010000100001111101
+segundo : 10100001100110001011000101101101
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra sistemas foi encontrada no arquivo: filosofia2.txt
+
+A palavra sistemas aparece 37 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+sistema : 1010111110100111000100101110
+pensamento : 0010000010001010111010010000100001111101
+pode : 00100110110110000
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra sistemas foi encontrada no arquivo: ti.txt
+
+A palavra sistemas aparece 134 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+dados : 110110001101111101010
+melhor : 101101111100011000011111100011
+aumento : 00000100101101111011001111110
+ti : 01111100
+---------------------------------------------------------
+
+ A palavra sistemas foi encontrada no arquivo: ti2.txt
+
+A palavra sistemas aparece 133 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, informações : 200, hardware : 200, dados : 201, melhor : 201, assim : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111000011011111010111110
+segurança : 101011111101010001000110000001110111100001000
+implantação : 110010110001011000100000110111000101111000011011111010111110
+ti : 01111100
+aumento : 00000100101101111001101111110
+informações : 1100001110011101110011010110000101111000011011110011110011111010
+hardware : 1001100100001101101110011000100001101111
+dados : 110110001101111101010
+melhor : 101101111100011001100111100110
+assim : 00010101010110010110
+---------------------------------------------------------
+
+ A palavra operacionais foi encontrada no arquivo: ti.txt
+
+A palavra operacionais aparece 67 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+dados : 110110001101111101010
+melhor : 101101111100011000011111100011
+aumento : 00000100101101111011001111110
+ti : 01111100
+---------------------------------------------------------
+
+ A palavra operacionais foi encontrada no arquivo: ti2.txt
+
+A palavra operacionais aparece 67 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, informações : 200, hardware : 200, dados : 201, melhor : 201, assim : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111000011011111010111110
+segurança : 101011111101010001000110000001110111100001000
+implantação : 110010110001011000100000110111000101111000011011111010111110
+ti : 01111100
+aumento : 00000100101101111001101111110
+informações : 1100001110011101110011010110000101111000011011110011110011111010
+hardware : 1001100100001101101110011000100001101111
+dados : 110110001101111101010
+melhor : 101101111100011001100111100110
+assim : 00010101010110010110
+---------------------------------------------------------
+
+ A palavra redes foi encontrada no arquivo: ti.txt
+
+A palavra redes aparece 133 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+dados : 110110001101111101010
+melhor : 101101111100011000011111100011
+aumento : 00000100101101111011001111110
+ti : 01111100
+---------------------------------------------------------
+
+ A palavra redes foi encontrada no arquivo: ti2.txt
+
+A palavra redes aparece 134 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, informações : 200, hardware : 200, dados : 201, melhor : 201, assim : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111000011011111010111110
+segurança : 101011111101010001000110000001110111100001000
+implantação : 110010110001011000100000110111000101111000011011111010111110
+ti : 01111100
+aumento : 00000100101101111001101111110
+informações : 1100001110011101110011010110000101111000011011110011110011111010
+hardware : 1001100100001101101110011000100001101111
+dados : 110110001101111101010
+melhor : 101101111100011001100111100110
+assim : 00010101010110010110
+---------------------------------------------------------
+
+ A palavra internet foi encontrada no arquivo: filosofia.txt
+
+A palavra internet aparece 10 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, priori : 125, sistema : 115, pensamento : 115, segundo : 114, deve : 115, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011101111
+sujeito : 101000101110011100000111001111101
+mundo : 10010001011000101101101
+condição : 11000110110001011011101011111001001011110011101101
+priori : 0010001101110110101101110
+sistema : 1010111010100111000100101111
+pensamento : 0010000010001010111110010000100001111101
+segundo : 10100001100110001011000101101101
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra internet foi encontrada no arquivo: filosofia2.txt
+
+A palavra internet aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+sistema : 1010111110100111000100101110
+pensamento : 0010000010001010111010010000100001111101
+pode : 00100110110110000
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra internet foi encontrada no arquivo: globalizacao.txt
+
+A palavra internet aparece 67 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ sentido : 200, processo : 200, importância : 134, informações : 134, estabelecimento : 134, pode : 134, quadros : 134, podemos : 134, modo : 134, assim : 199, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+sentido : 10011111011101101011110101110
+processo : 0011110001110110001111100110011110
+importância : 1011101000011111101000011011001110110010100111110001011000
+informações : 101101111101101111010001010000011001101010110010011011011111001
+estabelecimento : 111110010110000110111111111001011111110001011101001111011101101110
+pode : 001111110110101111
+quadros : 001101010010000011010100011101001
+podemos : 0011111101101011111010011101001
+modo : 101001110110101110
+assim : 00010011001101110100
+---------------------------------------------------------
+
+ A palavra internet foi encontrada no arquivo: ti.txt
+
+A palavra internet aparece 66 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 399, segurança : 268, implantação : 266, novas : 201, informações : 201, desenvolvimento : 200, dados : 201, melhor : 200, aumento : 200, ti : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111001001011111010111110
+segurança : 101011111101010001000011000011010111100100000
+implantação : 110010110001011000100001100111000101111001001011111010111110
+novas : 011011101101000001010
+informações : 1100011010010101110001110110000101111001001011110010110111111010
+desenvolvimento : 1101111111010111101101101001110100011101001100101101111011001111110
+dados : 110110001101111101010
+melhor : 101101111100011000011111100011
+aumento : 00000100101101111011001111110
+ti : 01111100
+---------------------------------------------------------
+
+ A palavra internet foi encontrada no arquivo: ti2.txt
+
+A palavra internet aparece 67 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ utilização : 400, segurança : 268, implantação : 267, ti : 201, aumento : 201, informações : 200, hardware : 200, dados : 201, melhor : 201, assim : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+utilização : 00100011111001000111001000001000101111000011011111010111110
+segurança : 101011111101010001000110000001110111100001000
+implantação : 110010110001011000100000110111000101111000011011111010111110
+ti : 01111100
+aumento : 00000100101101111001101111110
+informações : 1100001110011101110011010110000101111000011011110011110011111010
+hardware : 1001100100001101101110011000100001101111
+dados : 110110001101111101010
+melhor : 101101111100011001100111100110
+assim : 00010101010110010110
+---------------------------------------------------------
+
+ A palavra político foi encontrada no arquivo: filosofia.txt
+
+A palavra político aparece 36 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, priori : 125, sistema : 115, pensamento : 115, segundo : 114, deve : 115, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011101111
+sujeito : 101000101110011100000111001111101
+mundo : 10010001011000101101101
+condição : 11000110110001011011101011111001001011110011101101
+priori : 0010001101110110101101110
+sistema : 1010111010100111000100101111
+pensamento : 0010000010001010111110010000100001111101
+segundo : 10100001100110001011000101101101
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra político foi encontrada no arquivo: filosofia2.txt
+
+A palavra político aparece 38 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+sistema : 1010111110100111000100101110
+pensamento : 0010000010001010111010010000100001111101
+pode : 00100110110110000
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra político foi encontrada no arquivo: globalizacao.txt
+
+A palavra político aparece 66 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ sentido : 200, processo : 200, importância : 134, informações : 134, estabelecimento : 134, pode : 134, quadros : 134, podemos : 134, modo : 134, assim : 199, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+sentido : 10011111011101101011110101110
+processo : 0011110001110110001111100110011110
+importância : 1011101000011111101000011011001110110010100111110001011000
+informações : 101101111101101111010001010000011001101010110010011011011111001
+estabelecimento : 111110010110000110111111111001011111110001011101001111011101101110
+pode : 001111110110101111
+quadros : 001101010010000011010100011101001
+podemos : 0011111101101011111010011101001
+modo : 101001110110101110
+assim : 00010011001101110100
+---------------------------------------------------------
+
+ A palavra político foi encontrada no arquivo: politica.txt
+
+A palavra político aparece 400 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ políticas : 267, saúde : 201, melhoria : 201, eleitores : 199, política : 198, processo : 198, sentido : 200, metas : 199, atual : 201, assim : 201, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+políticas : 10000111010001110110010100011110111100011111001
+saúde : 100111111101110101011111001000
+melhoria : 10100000100011101001101110011010111111
+eleitores : 0001000100010110111111001100001001
+política : 1000011101000111011001010001111011110001111
+processo : 100000110111011000000100110011110
+sentido : 1001000001101111011110011110
+metas : 10100000011111111001
+atual : 11110111110101111110001
+assim : 111110011001101110100
+---------------------------------------------------------
+
+ A palavra religioso foi encontrada no arquivo: filosofia.txt
+
+A palavra religioso aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, priori : 125, sistema : 115, pensamento : 115, segundo : 114, deve : 115, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011101111
+sujeito : 101000101110011100000111001111101
+mundo : 10010001011000101101101
+condição : 11000110110001011011101011111001001011110011101101
+priori : 0010001101110110101101110
+sistema : 1010111010100111000100101111
+pensamento : 0010000010001010111110010000100001111101
+segundo : 10100001100110001011000101101101
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra religioso foi encontrada no arquivo: filosofia2.txt
+
+A palavra religioso aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+sistema : 1010111110100111000100101110
+pensamento : 0010000010001010111010010000100001111101
+pode : 00100110110110000
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra direito foi encontrada no arquivo: filosofia.txt
+
+A palavra direito aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, priori : 125, sistema : 115, pensamento : 115, segundo : 114, deve : 115, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011101111
+sujeito : 101000101110011100000111001111101
+mundo : 10010001011000101101101
+condição : 11000110110001011011101011111001001011110011101101
+priori : 0010001101110110101101110
+sistema : 1010111010100111000100101111
+pensamento : 0010000010001010111110010000100001111101
+segundo : 10100001100110001011000101101101
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra direito foi encontrada no arquivo: filosofia2.txt
+
+A palavra direito aparece 19 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+sistema : 1010111110100111000100101110
+pensamento : 0010000010001010111010010000100001111101
+pode : 00100110110110000
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra constituição foi encontrada no arquivo: filosofia.txt
+
+A palavra constituição aparece 8 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, priori : 125, sistema : 115, pensamento : 115, segundo : 114, deve : 115, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011101111
+sujeito : 101000101110011100000111001111101
+mundo : 10010001011000101101101
+condição : 11000110110001011011101011111001001011110011101101
+priori : 0010001101110110101101110
+sistema : 1010111010100111000100101111
+pensamento : 0010000010001010111110010000100001111101
+segundo : 10100001100110001011000101101101
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra constituição foi encontrada no arquivo: filosofia2.txt
+
+A palavra constituição aparece 7 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+sistema : 1010111110100111000100101110
+pensamento : 0010000010001010111010010000100001111101
+pode : 00100110110110000
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra normativa foi encontrada no arquivo: filosofia.txt
+
+A palavra normativa aparece 38 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 176, sujeito : 145, mundo : 134, condição : 134, priori : 125, sistema : 115, pensamento : 115, segundo : 114, deve : 115, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011101111
+sujeito : 101000101110011100000111001111101
+mundo : 10010001011000101101101
+condição : 11000110110001011011101011111001001011110011101101
+priori : 0010001101110110101101110
+sistema : 1010111010100111000100101111
+pensamento : 0010000010001010111110010000100001111101
+segundo : 10100001100110001011000101101101
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
+ A palavra normativa foi encontrada no arquivo: filosofia2.txt
+
+A palavra normativa aparece 38 vezes no arquivo
+
+Arvore Binária em Pré-Ordem: 
+[ teoria : 192, sujeito : 149, mundo : 144, priori : 144, condição : 133, sistema : 119, pensamento : 115, pode : 115, deve : 114, modo : 129, ]
+
+10 palavras mais frequentes, seguidas da sua codificação: 
+teoria : 01110001101011011111110
+sujeito : 10100010100110000000111101111101
+mundo : 10010001011000101101101
+priori : 0010001101111110101101111
+condição : 11000110110001011011111011111001001011110011101101
+sistema : 1010111110100111000100101110
+pensamento : 0010000010001010111010010000100001111101
+pode : 00100110110110000
+deve : 10110000001101000
+modo : 100101101101101101
+---------------------------------------------------------
+
