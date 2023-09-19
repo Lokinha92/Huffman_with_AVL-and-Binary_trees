@@ -42,77 +42,369 @@ palavra : codigo
 
    <div align = center> <img align src = /img/ArvoreEX.png> </div>
 
-   <h3 align = center>Arvore Binaria de pesquisa (BST)</h3>
-O método de inserção de elementos na árvore consiste em comparar o elemento a ser inserido com a raíz, e caso ele seja maior é inserido na sub-árvore direita, se não, é inserido na sub-árvore esquerda.
-Dessa forma, a árvore se torna uma árvore binária de pesquisa ou BST.
+   <h3 align = center>Arvore binária de pesquisa (BST)</h3>
+   O método de inserção de elementos na árvore consiste em comparar o elemento a ser inserido com a raíz, e caso ele seja maior é inserido na sub-árvore direita, se não, é inserido na sub-árvore esquerda.
+   Dessa forma, a árvore se torna uma árvore binária de pesquisa ou BST.
 
    <div align = center> <img align src = /img/insere_bt.gif> </div>
 
-Dizemos que uma árvore está balanceada, quando todos os nós da árvore, exceto os nós do ultimo nível tem 2 filhos.
+   Dizemos que uma árvore está balanceada, quando todos os nós da árvore, exceto os nós do ultimo nível tem 2 filhos.
 
-Ao realizar uma busca em uma BST, o valor que está sendo procurado é comparado com o valor do nó raiz. Com base nessa comparação, é possível determinar em qual subárvore (esquerda ou direita) continuar a busca. Isso efetivamente divide o espaço de busca pela metade em cada etapa, pois metade dos elementos em cada comparação é descartado.
+   Ao realizar uma busca em uma BST, o valor que está sendo procurado é comparado com o valor do nó raiz. Com base nessa comparação, é possível determinar em qual subárvore (esquerda ou direita) continuar a busca. Isso efetivamente divide o espaço de busca pela metade em cada etapa, pois metade dos elementos em cada comparação é descartado.
 
- Para uma árvore balanceada, o custo de pesquisa se torna <b>O(log n)</b> que é um custo muito mais viável em termos de tempo.
+   Para uma árvore balanceada, o custo de pesquisa se torna <b>O(log n)</b> que é um custo muito mais viável em termos de tempo.
 
- Porém, no seu pior caso, a arovre binária de pesquisa pode ser montada em um formato como esse:
+   Porém, no seu pior caso, a arovre binária de pesquisa pode ser montada em um formato como esse:
 
-<div align = center> <img align src = /img/piorcaso.png> </div>
+   <div align = center> <img align src = /img/piorcaso.png> </div>
 
-Tomemos como exemplo de elemento a ser buscado o 9. Observe que, primeiro, a estrutura não está balanceada, isso já interferiria no custo da busca, além disso, é possível perceber que, para chegar até o elemento alvo, é necessário percorrer toda a sub-árvore direita a partir da raiz, isso faz com que o custo da pesquisa volte a ser linear, ou seja <b>O(n)</b>.
+   Tomemos como exemplo de elemento a ser buscado o 9. Observe que, primeiro, a estrutura não está balanceada, isso já interferiria no custo da busca, além disso, é possível perceber que, para chegar até o elemento alvo, é necessário percorrer toda a sub-árvore direita a partir da raiz, isso faz com que o custo da pesquisa volte a ser linear, ou seja <b>O(n)</b>.
 
-Mas, enfim, como manter uma árvore balanceada?
+   Mas, enfim, como manter uma árvore balanceada?
 
-<h3 align = center>Arvore AVL</h3>
+   <h3 align = center>Arvore AVL</h3>
 
-Árvores AVL são árvores binárias de pesquisa, porém, com uma propriedade especial, que é a de se manter balanceada após inserções e remoções.
+   Árvores AVL são árvores binárias de pesquisa, porém, com uma propriedade especial, que é a de se manter balanceada após inserções e remoções.
 
-O conceito de Arvore AVL foi proposto em 1962 pelos matemáticos soviéticos G.M Adelson-Vesky e E.M Landis com a publicação do artigo "An algorithm for the organization of information" (Um algoritmo para a organização da informação). Nesse artigo, eles propuseram um novo conceito de árvore balanceada, baseando-se no conceito de altura.
+   O conceito de Arvore AVL foi proposto em 1962 pelos matemáticos soviéticos G.M Adelson-Vesky e E.M Landis com a publicação do artigo "An algorithm for the organization of information" (Um algoritmo para a organização da informação). Nesse artigo, eles propuseram um novo conceito de árvore balanceada, baseando-se no conceito de altura.
 
-A altura em uma árvore AVL refere-se à medida da distância máxima entre o nó raiz e a folha sem filhos mais profunda nas suas sub-árvores.
+   A altura em uma árvore AVL refere-se à medida da distância máxima entre o nó raiz e a folha sem filhos mais profunda nas suas sub-árvores.
 
-Baseado nesse conceito, Adelsom-Vesky e Landis observaram a seguinte propriedade: Se para todos os nós da árvore a diferença de altura entre a sub-árvore direita e esquerda for no máximo 1 (essa diferença é chamada fator de balanço), o custo de busca se torna proporcional a <b>O(logn)</b>.
+   O cálculo da altura de uma árvore é dado pela soma do tamanho da sua maior sub-árvore + 1:
 
-Após cada inserção, a arvore AVL percorre todos os nós atualizando as alturas, caso o módulo do fator de balanço seja diferente de 0 ou |-1|, a árvore realiza rotações para que ela obedeça ao conceito de balanceamento.
+   $$T = T_s + 1$$
 
-<h5 align = center>Rotações</h5>
+   Baseado nesse conceito, Adelsom-Vesky e Landis observaram a seguinte propriedade: Se para todos os nós da árvore a diferença de altura entre a sub-árvore direita e esquerda for no máximo 1 (essa diferença é chamada fator de balanço), o custo de busca se torna proporcional a <b>O(logn)</b>.
 
-Existem dois tipos de rotação: Para a esquerda e para a direita.
+   Após cada inserção, a arvore AVL percorre todos os nós atualizando as alturas, caso o módulo do fator de balanço seja diferente de 0 ou |-1|, a árvore realiza rotações para que ela obedeça ao conceito de balanceamento.
 
-<b>Rotação a esquerda: Caso o novo nó seja inserido na sub-árvore direita do filho a direita</b>
+   <h5 align = center>Rotações</h5>
 
-<div align = center> <img align src = /img/rot_esq.png> </div>
+   Existem dois tipos de rotação: Para a esquerda e para a direita.
 
-Neste exemplo, C foi inserido na subárvore direita do filho a direita de A, deixando o fator de balanço do nó A em |-2|.
+   <b>Rotação a esquerda: Caso o novo nó seja inserido na sub-árvore direita do filho a direita</b>
 
-Na rotação a esquerda, A passa a ser filho esquerdo de B, C permanece como filho a direita de B. Caso B tivesse um filho a esquerda (nesse caso é NULL) ele passaria a ser o filho a direita de A (que nesse caso também é NULL).
+   <div align = center> <img align src = /img/rot_esq.png> </div>
 
-Dessa forma, todos os nós passam a ter fator de balanço 0, deixando a estrutura balanceada.
+   Neste exemplo, C foi inserido na subárvore direita do filho a direita de A, deixando o fator de balanço do nó A em |-2|.
 
-<b>Rotação a direita: Caso o novo nó seja inserido na sub-árvore esquerda do filho a esquerda</b>
+   Na rotação a esquerda, A passa a ser filho esquerdo de B, C permanece como filho a direita de B. Caso B tivesse um filho a esquerda (nesse caso é NULL) ele passaria a ser o filho a direita de A (que nesse caso também é NULL).
 
-<div align = center> <img align src = /img/rot_dir.png> </div>
+   Dessa forma, todos os nós passam a ter fator de balanço 0, deixando a estrutura balanceada.
 
-Nesse exemplo, A foi inserido na sub-árvore esquerda do filho a esquerda de C, deixando o fator de balanço do nó C em |-2|
+   <b>Rotação a direita: Caso o novo nó seja inserido na sub-árvore esquerda do filho a esquerda</b>
 
-Na rotação a direita, C passa a ser filho direito de B, A permanece como filho a esquerda de B. Caso B tivesse um filho a direita (nesse caso é NULL) ele passaria a ser o filho esquerdo de C (que nesse caso também é NULL);
+   <div align = center> <img align src = /img/rot_dir.png> </div>
 
-Dessa forma, todos os nós passam a ter fator de balanço 0, deixando a estrutura balanceada.
+   Nesse exemplo, A foi inserido na sub-árvore esquerda do filho a esquerda de C, deixando o fator de balanço do nó C em |-2|
 
-Quando o nó é inserido na parte externa da árvore, uma rotação simples para a esquerda ou para a direita é suficiente para deixar a árvore balanceada, porém quando a inserção é feita na parte externa da árvore, são necessárias rotações duplas para que a estrutura fique novamente balanceada
+   Na rotação a direita, C passa a ser filho direito de B, A permanece como filho a esquerda de B. Caso B tivesse um filho a direita (nesse caso é NULL) ele passaria a ser o filho esquerdo de C (que nesse caso também é NULL);
 
-<b>Rotação direita-esquerda: Caso o novo nó seja inserido na sub-árvore esquerda do filho a direita</b>
+   Dessa forma, todos os nós passam a ter fator de balanço 0, deixando a estrutura balanceada.
 
-<div align = center> <img align src = /img/rot_dir_esq.png> </div>
+   Quando o nó é inserido na parte externa da árvore, uma rotação simples para a esquerda ou para a direita é suficiente para deixar a árvore balanceada, porém quando a inserção é feita na parte externa da árvore, são necessárias rotações duplas para que a estrutura fique novamente balanceada
 
-Nesse exemplo, 20 foi inserido na sub-arvore esquerda do filho direito de 10, deixando o nó 10 com fator de balanço |-2|. 
+   <b>Rotação direita-esquerda: Caso o novo nó seja inserido na sub-árvore esquerda do filho a direita</b>
 
-Para que a estrutura fique novamente balanceada, uma rotação para a direita foi feita entre os nós 20 e 30, e depois, uma rotação a esquerda foi feita, deixando todos os nós com fator de balanço 0.
+   <div align = center> <img align src = /img/rot_dir_esq.png> </div>
 
-<b>Rotação esquerda-direita: Caso o novo nó seja inserido na sub-árvore direita do filho a esquerda</b>
+   Nesse exemplo, 20 foi inserido na sub-arvore esquerda do filho direito de 10, deixando o nó 10 com fator de balanço |-2|. 
 
-<div align = center> <img align src = /img/rot_esq_dir.png> </div>
+   Para que a estrutura fique novamente balanceada, uma rotação para a direita foi feita entre os nós 20 e 30, e depois, uma rotação a esquerda foi feita, deixando todos os nós com fator de balanço 0.
 
-Nesse exemplo, 20 foi inserido na sub-arvore direita do filho a esquerda de 30, deixando o fator de carga do nó 30 em |-2|.
+   <b>Rotação esquerda-direita: Caso o novo nó seja inserido na sub-árvore direita do filho a esquerda</b>
 
-Para que a estrutura fique novamente balanceada, uma rotação a esquerda é feita entre os nós 20 e 10, e depois uma rotação a direita foi feita, deixando todos os nós com fator de balanço 0.
+   <div align = center> <img align src = /img/rot_esq_dir.png> </div>
 
+   Nesse exemplo, 20 foi inserido na sub-arvore direita do filho a esquerda de 30, deixando o fator de carga do nó 30 em |-2|.
+
+   Para que a estrutura fique novamente balanceada, uma rotação a esquerda é feita entre os nós 20 e 10, e depois uma rotação a direita foi feita, deixando todos os nós com fator de balanço 0.
+
+   A cada inserção e remoção, a árvore é percorrida verificando o fator de balanço de todos os nós, rotações acontecem até que o fator de balanço de todos os nós obedeçam à propriedade de balanceamento.
+
+   <h4 align = center>👨‍💻 CODIFICAÇÃO DAS ESTRUTURAS DE ARVORE</h4>
+
+
+   <h6 align=center>📚BIBLIOTECAS UTILIZADAS</h6>
+
+   <table align=center>
+     <tr>
+        <td>iostream </td>    
+    </tr>
+    <tr>
+        <td>string </td>    
+    <tr>
+        <td>fstream</td>
+    </tr>
+        <tr>
+        <td>vector</td>
+    </tr>
+        </tr>
+        <tr>
+        <td>algorithm</td>
+    </tr>    
+   </table>
+
+   <h5 align = center>Arvore binária de pesquisa (BST)</h5>
+
+   <b><p align = center>Arvore_binaria.hpp</p></b>
+
+   Nesse arquivo, a definição da estrutura que vai representar os nós é feita, assim como a construção da classe que vai representar a estrutura de árvore.
+
+```c++
+struct No {
+    string palavra;
+    int freq;
+
+    No *esq;
+    No *dir;
+
+    No(const string& palavra, int freq): palavra(palavra), freq(freq), esq(nullptr), dir(nullptr){}
+};
+```
+O problema descrito anteriormente, exige que o conteúdo de um nó seja, além de uma string para representar a palavra, um valor inteiro que representa a frequencia dessa palavra em um texto. Além disso, a struct "No" contém os ponteiros para os filhos à esquerda e à direita.
+
+O construtor da struct define que um nó é inicializado a partir de uma dada string e um valor inteiro. Os ponteiros são apontados inicialmente para NULL, já que, quando um nó é inserido, ele não tem "nós filhos". 
+```c++
+class Arvore_binaria
+{
+private:
+    No* InserirRecursivamente(No* no, const string& palavra, int freq);
+public:
+    No* raiz;
+    Arvore_binaria();
+
+    void Inserir(const string& palavra, int freq);
+    void Imprimir(No *no, ofstream &arquivo);
+    
+};
+```
+A BST é representada a partir de uma classe, que contém 3 funções, um construtor e um objeto do tipo "No" que representa a raiz da árvore.
+
+A seguir, a implementação das funções referidas acima:
+<b><p align = center>Arvore_binaria.cpp</p></b>
+
+Primeiramente, o construtor da classe é implementado, definindo a raiz da árvore como NULL, ou seja, uma árvore vazia.
+
+```c++
+Arvore_binaria::Arvore_binaria() {
+    raiz = NULL;
+}
+```
+O método de inserção envolve 2 funções. A primeira função contém a lógica da inserção própriamente dita:
+
+```c++
+No *Arvore_binaria::InserirRecursivamente(No *no, const string &palavra, int freq) {
+    if (no == NULL) {
+        return new No{ palavra, freq };
+    }
+
+    int score = freq - (2 * palavra.length());
+
+    int compara_score = score - (no->freq - (2 * no->palavra.length()));
+
+    if (compara_score <= 0) {
+        no->esq = InserirRecursivamente(no->esq, palavra, freq);
+    } else {
+        no->dir = InserirRecursivamente(no->dir, palavra, freq);
+    }
+
+    return no;
+}
+```
+Essa função recebe um nó, que será a referência de onde o processo de inserção começará a verificar a possibilidade de inserção de um novo nó, e o conteúdo do novo nó (string palavra e int frequencia) como parâmetro. Caso o nó de referência esteja definido como NULL, significa que é possível inserir um nó naquela posição, logo, o nó é simplesmente inserido ali.
+
+Caso contrário, a regra de inserção é seguida até encontrar uma posição vazia possível para o novo nó.
+
+A regra de inserção envolve a tanto o atributo de frequencia, quanto o número de caracteres presentes no atributo palavra. Um "score" foi calculado para que sirva de referência, e é dado pela frequencia, menos 2 vezes o tamanho da palavra:
+
+$$score = freq - (2*T_p)$$
+
+O score do nó a ser inserido é comparado ao score do nó de referência atual, caso o score do novo nó for menor ou igual ao nó de referência atual, a função é chamada recursivamente passando o filho esquerdo como nó de referência, caso contrário, a função é chamada recursivamente passando o filho direito como nó de referência. A recursividade ocorre até que o nó seja inserido na árvore.
+
+```c++
+void Arvore_binaria::Inserir(const string &palavra, int freq) {
+    raiz = InserirRecursivamente(raiz, palavra, freq);
+}
+```
+A função Inserir recebe, realmente, os atributos do novo nó a ser inserido como parâmetro. Ela chama a função de Inserção recursiva passando a raiz como nó primário de referência, assim como os atributos do novo nó. Isso significa que o processo de verificação de possibilidade de inserção será inicializado na raiz, e percorrerá suas respectivas sub-árvores em busca de uma posição adequada para a inserção do novo nó.
+
+```c++
+void Arvore_binaria::Imprimir(No *no, ofstream &arquivo) {
+    if (arquivo.is_open()) {
+        if (no != NULL) {
+            arquivo << no->palavra << " : " << no->freq << ", ";
+            Imprimir(no->esq, arquivo);
+            Imprimir(no->dir, arquivo);
+        }
+    }
+}
+```
+Por fim, a função de impressão recebe um nó primário de referência e o aqruivo de output onde a árvore deverá ser impressa. A função percorre todos os nós da árvore a partir do nó primário de referência e imprime os atributos de cada nó da árvore em pré-ordem.
+
+<h5 align = center>Arvore AVL</h5>
+<b><p align = center>Arvore_AVL.hpp</p></b>
+
+Pelo fato de uma árvore AVL ser uma BST, as diferenças na implementação são referentes às rotaçõees.
+
+Primeiramente, a struct que representará o nó é criada:
+
+```c++
+struct No_AVL {
+    string palavra;
+    int freq;
+
+    int altura;
+
+    No_AVL *esq;
+    No_AVL *dir;
+
+    No_AVL(const string& palavra, int freq): palavra(palavra), freq(freq), altura(0), esq(nullptr), dir(nullptr){}
+};
+```
+
+É possível notar que, em relação ao nó que compõe a BST simples, a única diferença é que o nó da árvore AVL contém um atributo para representar a altura que este nó se encontra na árvore. Com relação ao construtor, quando um nó é inserido na árvore, ele é inicializado com o atributo de altura com o valor 0.
+
+```c++
+class Arvore_AVL
+{
+private:
+    No_AVL* Inserir_Recursivamente(No_AVL* no, const string& palavra, int freq);
+public:
+
+    No_AVL* raiz;
+    Arvore_AVL();
+
+    No_AVL* Rot_Esquerda(No_AVL* no);
+    No_AVL* Rot_Direita(No_AVL* no);
+
+    int get_altura(No_AVL* no);
+    void Inserir(const string& palavra, int freq);
+    void Imprimir(No_AVL* no, ofstream &arquivo);
+};
+```
+Assim como na BST, a árvore AVL é representada com uma classe. A classe da Arvore AVL é composta por 6 funções, 1 construtor, e um objeto do tipo "No_AVL" que representa a raíz da árvore.
+
+A seguir, a implementação das funções referenciadas acima:
+
+<b><p align = center>Arvore_AVL.cpp</p></b>
+
+De início, assim como na BST, o construtor da classe é implementado, definindo a raiz da árvore como NULL, ou seja, uma árvore vazia.
+
+```c++
+Arvore_AVL::Arvore_AVL(){
+    raiz = NULL;    
+}
+```
+
+A função get_altura recebe um nó como parâmetro, e verifica a altura desse nó.
+```c++
+int Arvore_AVL::get_altura(No_AVL* no){
+    if (no == NULL){
+        return -1;
+    }
+
+    return no->altura;
+}
+```
+Para um nó definido como NULL, consideramos a altura como -1.
+
+Depois, as funções de rotação são implementadas:
+
+```c++
+No_AVL* Arvore_AVL::Rot_Direita(No_AVL* no){
+    No_AVL* aux = no->esq;
+    No_AVL* aux_fd = aux->dir;
+
+    aux->dir = no;
+    no->esq = aux_fd;
+
+    no->altura = max(get_altura(no->esq), get_altura(no->dir)) + 1;
+    aux->altura = max(get_altura(aux->esq), get_altura(aux->dir)) + 1;
+
+    return aux;
+}
+
+No_AVL* Arvore_AVL::Rot_Esquerda(No_AVL* no){
+    No_AVL* aux = no->dir;
+    No_AVL* aux_fe = aux->esq;
+
+    aux->esq = no;
+    no->dir = aux_fe;
+
+    no->altura = max(get_altura(no->esq), get_altura(no->dir)) + 1;
+    aux->altura = max(get_altura(aux->esq), get_altura(aux->dir)) + 1;
+
+    return aux;
+}
+```
+As funções de rotação recebem o nó com o fator de balanço incoerente. Elas operam atualizando os ponteiros de acordo com a lógica de rotação já vista anteriormente, e, após essa atualização dos ponteiros, a altura dos nós da nova sub-arvore gerada é atualizada de acordo com a fórmula do calculo de altura. As funções retornam o ponteiro para a raíz na nova sub-árvore gerada.
+
+Com respeito ao método de inserção, ele não se difere muito da implementação da BST, exceto pela aplicação da propriedade de rotações para manter a árvore equilibrada.
+
+```c++
+No_AVL* Arvore_AVL::Inserir_Recursivamente(No_AVL* no, const string& palavra, int freq){
+    if(no == NULL){
+        return new No_AVL{palavra ,freq};
+    }
+
+    int score = freq - (2 * palavra.length());
+
+    int compara_score = score - (no->freq - (2 * no->palavra.length()));
+
+    if(compara_score <= 0){
+        no->esq = Inserir_Recursivamente(no->esq, palavra, freq);
+    } else{
+        no->dir = Inserir_Recursivamente(no->dir, palavra, freq);
+    }
+
+    no->altura = 1 + max(get_altura(no->esq), get_altura(no->dir)); // atualizando altura do nó
+
+    int fat_balanco = get_altura(no->esq) - get_altura(no->dir); // calculando fator de balanço
+
+    // rotações
+
+    if(fat_balanco > 1 && compara_score <=0){ // o nó foi inserido na sub-arvore esquerda do filho da esquerda
+        return Rot_Direita(no);
+    }
+
+    if(fat_balanco < -1 && compara_score > 0){ // o nó foi inserido na sub-arvore direita do filho da direita
+        return Rot_Esquerda(no);
+    }
+
+    if(fat_balanco > 1 && compara_score > 0){ // o nó foi inserido na sub-arvore direita do filho a esquerda
+        no->esq = Rot_Esquerda(no->esq);
+        return Rot_Direita(no);
+    }
+
+    if(fat_balanco < -1 && compara_score <=0){ // o nó foi inserido na sub-arvore esquerda do filho a direita
+        no->dir = Rot_Direita(no->dir);
+        return Rot_Esquerda(no);
+    }
+
+    return no;
+}
+```
+Note que, até certo ponto, a implementação do método de inserção é idêntica à BST. Após isso, a implementação do auto-balanceamento utilizando as rotações começa. 
+
+Primeiro, a altura do nó primário de referência é atualizada e o fator de balanço do nó é calculado. Por fim, é feita uma verificação conjunta da posição onde o novo nó foi inserido, e o fator de balanço do nó primário de referência. De acordo com a posição onde o novo nó foi inserido, a devida rotação para que a sub-árvore que contém o nó primário de referência como raiz fique equilibrada é realizada.
+
+```c++
+void Arvore_AVL::Inserir(const string& palavra, int freq){
+    raiz = Inserir_Recursivamente(raiz, palavra, freq);
+}
+
+void Arvore_AVL::Imprimir(No_AVL* no, ofstream &arquivo) {
+
+    if(arquivo.is_open()){
+        if (no != nullptr) {
+        arquivo << no->palavra << " : " << no->freq << ", ";
+        Imprimir(no->esq, arquivo);
+        Imprimir(no->dir, arquivo);
+    }
+    }
+}
+```
+Tanto a segunda função de Inserção, quanto a função de impressão, funcionam exatamente igual à BST.
+
+<h2 align = center>👾 CODIFICAÇÃO DE HUFFMAN 👾</h2>

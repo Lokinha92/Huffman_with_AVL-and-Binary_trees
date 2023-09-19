@@ -27,4 +27,3 @@ public:
     void Imprimir(No *no, ofstream &arquivo);
     
 };
-
