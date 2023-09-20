@@ -808,3 +808,98 @@ A única diferença entre as duas implementações é, justamente, a árvore uti
 <b><p align = center>nome_txt.txt : Contém o nome dos arquivos de texto que deverão ser considerados para a pesquisa e o processamento.</p></b>
 
 <b><p align = center>stopwords.txt : Contém as palavras sem relevância semântica que deverão ser removidas dos textos. </p></b>
+
+- --
+
+Antes do processamento, o tratamento dos textos e a montagem do vector que vai armazenar o par contendo texto juntamente com o seu nome de arquivo deve ser realizada:
+
+```c++
+    Apaga_output("../output");
+
+    string loc_nomes = "../dataset/nome_txt.txt";
+    string prefix = "../dataset/";
+    string nomes;
+    vector<string> caminhos;
+    vector<string> nome_arquivos;
+
+    fstream arquivos(loc_nomes);
+
+    if (arquivos.is_open()) {
+        while (arquivos >> nomes) {
+            string caminho = prefix + nomes;
+
+            caminhos.push_back(caminho);
+            nome_arquivos.push_back(nomes);
+
+            caminho = "";
+        }
+
+        arquivos.close();
+    }
+
+    unordered_set<string> Stopwords = LeStopwords("../dataset/stopwords.txt");
+    vector<string> textos = LeTexto(caminhos);
+
+    vector<string> textos_tratados;
+
+    for (const auto &texto : textos) {
+        string texto_tratado = Tratamento(texto);
+        string texto_final = RemoveSW(texto_tratado, Stopwords);
+
+        textos_tratados.push_back(texto_final);
+
+        texto_tratado = "";
+        texto_final = "";
+    }
+
+    vector<pair<string, string>> par_nome_texto;
+
+    for (int i = 0; i < textos_tratados.size(); i++) {
+        par_nome_texto.push_back(make_pair(nome_arquivos[i], textos_tratados[i]));
+    }
+```
+
+A função "Apaga_output" é apenas uma função auxiliar que apaga o conteúdo da pasta dataset para que não haja sobreposição de output entre execuções distintas do algorítmo.
+
+Primeiramente, o arquivo "nome_txt.txt" é acessado e o caminho correto para o arquivo é montado, e armazenado em um vector.
+
+Com os caminhos devidamente armazenados, as stopwords e os textos são lidos e armazenados para o tratamento.
+
+Enfim, o texto é tratado, e a estrutura que vai armazenar o par contendo o texto tratado juntamente com o nome do arquivo do texto pode ser montada.
+
+Após esses processos, o arquivo que contém as palavras a serem pesquisadas é acessado, e o processamento é feito para cada palavra presente no arquivo "palavras.txt" usando árvores binárias e AVL, separadamente.
+
+```c++
+ fstream palavras("../dataset/palavra.txt");
+
+    if (palavras.is_open()) {
+        string palavra_pesq;
+        double tempo_total_binaria = 0.0;
+        double tempo_total_avl = 0.0;
+
+        while (palavras >> palavra_pesq) {
+            auto start_binaria = chrono::high_resolution_clock::now();
+            ProcessarPalavrasArvoreBinaria(par_nome_texto, palavra_pesq, NUM_SUGESTOES);
+            auto end_binaria = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed_binaria = end_binaria - start_binaria;
+            tempo_total_binaria += elapsed_binaria.count();
+
+            auto start_avl = chrono::high_resolution_clock::now();
+            ProcessarPalavrasArvoreAVL(par_nome_texto, palavra_pesq, NUM_SUGESTOES);
+            auto end_avl = chrono::high_resolution_clock::now();
+            chrono::duration<double> elapsed_avl = end_avl - start_avl;
+            tempo_total_avl += elapsed_avl.count();
+        }
+
+        cout << "Tempo total decorrido com Árvore Binária: " << tempo_total_binaria << " segundos" << endl;
+        cout << "Tempo total decorrido com Árvore AVL: " << tempo_total_avl << " segundos" << endl;
+
+        palavras.close();
+    }
+```
+
+A contagem de tempo decorrente para as operações envolvendo cada uma das árvores é feita e mostrada no terminal, antes do fim da execução do algoritmo.
+
+A intenção é comparar os tempos, e verificar qual das árvores fornece um processamento mais rápido.
+
+<h2 align = center>📈 TESTES E RESULTADOS</h2>
