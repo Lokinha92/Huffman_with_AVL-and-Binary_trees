@@ -54,7 +54,6 @@ int main() {
         string palavra_pesq;
         double tempo_total_binaria = 0.0;
         double tempo_total_avl = 0.0;
-        double tempo_total_huff = 0.0;
 
         while (palavras >> palavra_pesq) {
             auto start_binaria = chrono::high_resolution_clock::now();

@@ -557,4 +557,254 @@ Para a realização do processamento do/dos textos, todas as estruturas descrita
 
 Além das estruturas já descritas, a estrutura do contador de palavras será utilizado. A documentação do contador de palavras pode ser acessado <a href="https://github.com/Lokinha92/counting_word_frequency">AQUI</a>
 
+Uma função auxiliar foi adicionada à estrutura de HeapMax para remover uma palavra caso ela esteja entre as K mais frequentes:
 
+```c++
+void HeapMAX::RemoveSugestao(const string& palavra, HeapMAX& heap, int k){
+    int index = -1;
+    bool encontrou = false;
+
+    for(int i=0; i < (min(k, static_cast<int>(heap.heap.size()))); i++){
+        if(heap.heap[i].palavra == palavra){
+            index = i;
+            encontrou = true;
+
+            break;
+        }
+    }
+
+    if(encontrou){
+        heap.heap[index] = heap.heap.back();
+        heap.heap.pop_back();
+        heap.prop(index);
+    }
+}
+```
+Outra funcionalidade adicionada à estrutura do contador de palavras, é a de verificar se uma palavra está presente no texto:
+
+```c++
+bool NoTexto(const string &texto, const string &palavra) {
+    istringstream separador(texto);
+    string palavra_notxt;
+
+    while (separador >> palavra_notxt) {
+        if (palavra == palavra_notxt) {
+            return true;
+        }
+    }
+
+    return false;
+}
+```
+Por fim, funções que percorrem as árvores binária e AVL e realizam a codificação binária da palavra presente no nó utilizando a árvore de huffman também foram adicionadas:
+
+```c++
+void Huff_bt(No *no, unordered_map<char, string> codigos, ofstream &arquivo) {
+    if (no == nullptr) {
+        return;
+    }
+
+    string codigo = Codificar(no->palavra, codigos);
+
+    arquivo << no->palavra << " : " << codigo << endl;
+
+    Huff_bt(no->esq, codigos, arquivo);
+    Huff_bt(no->dir, codigos, arquivo);
+}
+
+void Huff_AVL(No_AVL *no, unordered_map<char, string> codigos, ofstream &arquivo) {
+    if (no == nullptr) {
+        return;
+    }
+
+    string codigo = Codificar(no->palavra, codigos);
+
+    arquivo << no->palavra << " : " << codigo << endl;
+
+    Huff_AVL(no->esq, codigos, arquivo);
+    Huff_AVL(no->dir, codigos, arquivo);
+}
+```
+
+Com essas adições, o processamento já tem todas as ferramentas disponíveis para que ele aconteça.
+
+As funções responsáveis pelo processamento estão referenciadas no arquivo <b>functions.hpp</b> e implementadas no arquivo <b>functions.cpp</b>
+
+O processamento é realizado da seguinte forma:
+
+Primeiro, a ocorrência da palavra dada é verificada nos textos de referência. Para cada texto onde essa palavra exista, a estrutura do contador de palavras é usada para contar a frequência de todas as palavras no texto, dessa forma, a frequência da palavra em questão pode ser acessada. 
+
+Com a contagem das palavras realizada, elas são inseridas na estrutura de Heap máxima para que as K palavras mais frequentes sejam classificadas. Caso a palavra em questão esteja entre as K mais frequentes, ela é removida e a proxima palavra mais frequente é adicionada à contagem.
+
+Após a heap estar devidamente montada, as k palavras são passadas para a árvore em questão. Com as árvores montadas, a árvore de huffman é montada e os códigos gerados referentes a cada símbolo é armazenado em um unordered_map. 
+
+Dessa forma, é possível realizar o processo de pesquisa, fazendo a codificação binária das palavras presentes na árvore usando a arvore de huffman gerada para aquele texto.
+
+Por fim, todos os processos são printados de acordo com o formato já descrito anteriormente para conferência em seu respectivo arquivo de output. Um arquivo de output vai ser gerado para cada tipo de árvore (AVL ou binária).
+
+```c++
+void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>> &par_nome_texto, const string &palavra_pesq, int NUM_SUGESTOES) {
+    for (const auto &par : par_nome_texto) {
+        if (NoTexto(par.second, palavra_pesq)) {
+            unordered_map<string, int> frequencia = ContaFrequencia(par.second);
+            int freq_encontrada = 0;
+
+            if (frequencia.find(palavra_pesq) != frequencia.end()) {
+                freq_encontrada = frequencia[palavra_pesq];
+            }
+
+            HeapMAX Heap_bt;
+
+            for (const auto &item : frequencia) {
+                Heap_bt.inserir(DataPair(item.first, item.second));
+            }
+
+            Heap_bt.RemoveSugestao(palavra_pesq, Heap_bt, NUM_SUGESTOES);
+
+            Arvore_binaria Binary_tree = Arvore_binaria();
+
+            for (int i = 0; i < NUM_SUGESTOES && !Heap_bt.Vazia(); ++i) {
+                DataPair pair_bt = Heap_bt.PesquisaMAX();
+                Binary_tree.Inserir(pair_bt.palavra, pair_bt.freq);
+            }
+
+            Heap_bt.cleanHEAP(Heap_bt);
+
+            frequencia.clear();
+
+            unordered_map<char, int> freq_char = ContaFrequencia_char(par.second);
+
+            NoHuffmann *raiz = ConstruirArvore(freq_char);
+
+            unordered_map<char, string> codigos;
+            gerarCodigosHuffman(raiz, "", codigos);
+
+            string caminho = "../output/output_binario.txt";
+
+            ofstream output(caminho, ios::app);
+
+            if (output.is_open()) {
+                output << " A palavra " << palavra_pesq << " foi encontrada no arquivo: " << par.first << endl << endl;
+                output << "A palavra " << palavra_pesq << " aparece " << freq_encontrada << " vezes no arquivo" << endl << endl;;
+                output << "Arvore Binária em Pré-Ordem: " << endl;
+                output << "[ ";
+                Binary_tree.Imprimir(Binary_tree.raiz, output);
+                output << "]" << endl << endl;
+
+                output << NUM_SUGESTOES << " palavras mais frequentes, seguidas da sua codificação: " << endl;
+                Huff_bt(Binary_tree.raiz, codigos, output);
+                output << "---------------------------------------------------------" << endl << endl;
+                output.close();
+            }
+
+            freq_char.clear();
+            codigos.clear();
+        }
+    }
+}
+```
+---
+
+```c++
+
+void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>> &par_nome_texto, const string &palavra_pesq, int NUM_SUGESTOES) {
+    for (const auto &par : par_nome_texto) {
+        if (NoTexto(par.second, palavra_pesq)) {
+            unordered_map<string, int> frequencia = ContaFrequencia(par.second);
+            int freq_encontrada = 0;
+
+            if (frequencia.find(palavra_pesq) != frequencia.end()) {
+                freq_encontrada = frequencia[palavra_pesq];
+            }
+
+            HeapMAX Heap_avl;
+
+            for (const auto &item : frequencia) {
+                Heap_avl.inserir(DataPair(item.first, item.second));
+            }
+
+            Heap_avl.RemoveSugestao(palavra_pesq, Heap_avl, NUM_SUGESTOES);
+
+            Arvore_AVL AVL_tree = Arvore_AVL();
+
+            for (int i = 0; i < NUM_SUGESTOES && !Heap_avl.Vazia(); ++i) {
+                DataPair pair_avl = Heap_avl.PesquisaMAX();
+                AVL_tree.Inserir(pair_avl.palavra, pair_avl.freq);
+            }
+
+            Heap_avl.cleanHEAP(Heap_avl);
+
+            frequencia.clear();
+
+            unordered_map<char, int> freq_char = ContaFrequencia_char(par.second);
+
+            NoHuffmann *raiz = ConstruirArvore(freq_char);
+
+            unordered_map<char, string> codigos;
+            gerarCodigosHuffman(raiz, "", codigos);
+
+            string caminho = "../output/output_avl.txt";
+
+            ofstream output(caminho, ios::app);
+
+            if (output.is_open()) {
+                output << " A palavra " << palavra_pesq << " foi encontrada no arquivo: " << par.first << endl << endl;
+                output << "A palavra " << palavra_pesq << " aparece " << freq_encontrada << " vezes no arquivo" << endl << endl;;
+                output << "Arvore AVL em Pré-Ordem: " << endl;
+                output << "[ ";
+                AVL_tree.Imprimir(AVL_tree.raiz, output);
+                output << "]" << endl << endl;
+
+                output << NUM_SUGESTOES << " palavras mais frequentes, seguidas da sua codificação: " << endl;
+                Huff_AVL(AVL_tree.raiz, codigos, output);
+                output << "---------------------------------------------------------" << endl << endl;
+                output.close();
+            }
+
+            freq_char.clear();
+            codigos.clear();
+        }
+    }
+}
+```
+A única diferença entre as duas implementações é, justamente, a árvore utilizada. A variável NUM_SUGESTOES indica qual será o range de palavras a serem consideradas as mais frequentes.
+
+<h2 align = center>⚙️ ALGORITMO</h2>
+<b><p align = center>main.cpp</p></b>
+
+<h4 align = center>ARQUIVOS UTILIZADOS</h4>
+<table align=center>
+     <tr>
+        <td>filosofia.txt / filosofia2.txt </td>    
+    </tr>
+    <tr>
+        <td>globalização.txt </td>    
+    <tr>
+        <td>politica.txt</td>
+    </tr>
+        <tr>
+        <td>ti.txt / ti2.txt</td>
+    </tr>
+</table>
+
+<b><p align = center>Esses são os arquivos contendo os textos de referência. </p></b>
+
+<table align = center>
+        </tr>
+        <tr>
+        <td>palavra.txt</td>
+    </tr>
+        </tr>
+        <tr>
+        <td>nome_txt.txt</td>
+    </tr>
+        </tr>
+        <tr>
+        <td>stopwords.txt</td>
+    </tr> 
+</table>
+<b><p align = center>palavra.txt : Contém as palavras que serão pesquisadas nos textos para condicionar o processamento </p></b>
+
+<b><p align = center>nome_txt.txt : Contém o nome dos arquivos de texto que deverão ser considerados para a pesquisa e o processamento.</p></b>
+
+<b><p align = center>stopwords.txt : Contém as palavras sem relevância semântica que deverão ser removidas dos textos. </p></b>
