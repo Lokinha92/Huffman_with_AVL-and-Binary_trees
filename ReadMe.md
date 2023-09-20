@@ -811,6 +811,12 @@ A única diferença entre as duas implementações é, justamente, a árvore uti
 
 - --
 
+O range das palavras mais frequentes a serem consideradas pode ser alterado definindo o valor desejado à variável NUM_SUGESTOES localizada no cabeçalho do arquivo <b>main.cpp</b>
+
+```c++
+#define NUM_SUGESTOES 10
+```
+
 Antes do processamento, o tratamento dos textos e a montagem do vector que vai armazenar o par contendo texto juntamente com o seu nome de arquivo deve ser realizada:
 
 ```c++
@@ -898,7 +904,7 @@ Após esses processos, o arquivo que contém as palavras a serem pesquisadas é 
     }
 ```
 
-A contagem de tempo decorrente para as operações envolvendo cada uma das árvores é feita e mostrada no terminal, antes do fim da execução do algoritmo.
+A contagem de tempo decorrente para as operações envolvendo cada uma das árvores é feita utilizando a biblioteca <b>chrono</b> e mostrada no terminal, antes do fim da execução do algoritmo.
 
 A intenção é comparar os tempos, e verificar qual das árvores fornece um processamento mais rápido.
 
