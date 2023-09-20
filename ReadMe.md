@@ -408,3 +408,153 @@ void Arvore_AVL::Imprimir(No_AVL* no, ofstream &arquivo) {
 Tanto a segunda função de Inserção, quanto a função de impressão, funcionam exatamente igual à BST.
 
 <h2 align = center>👾 CODIFICAÇÃO DE HUFFMAN 👾</h2>
+
+A codificação de Huffman é uma técnica de compressão de dados que foi desenvolvida por David A. Huffman em 1952. Ela é amplamente usada para compactar dados, como texto e arquivos de mídia, reduzindo seu tamanho para economizar espaço de armazenamento e melhorar a eficiência na transmissão de dados.
+
+Ela é eficiente para dados que contêm símbolos com diferentes frequências de ocorrência, pois permite que os símbolos mais comuns sejam representados por códigos mais curtos, economizando espaço.
+
+A codificação de huffman ocorre seguindo os seguintes passos:
+
+- Frequência de Ocorrência: Inicialmente, é feita uma análise do conjunto de dados a ser comprimido para determinar a frequência de ocorrência de cada símbolo, no caso dessa implementação, caracteres no texto.
+
+- Construção da Árvore de Huffman: Com base nas frequências, uma árvore de Huffman é construída. Esta árvore tem o formato de uma BST, onde os nós folha representam os símbolos e os nós internos representam combinações de símbolos. A árvore é construída de maneira a garantir que os símbolos mais frequentes tenham caminhos mais curtos na árvore.
+
+    Eis um exemplo visual da construção da árvore de Huffman:
+<div align = center> <img align src = /img/huff.png> </div>
+
+Neste exemplo, a árvore de huffman foi montada para um conjunto contendo os caracteres 'A', 'B', 'C' 'D', 'E', 'F'. Note que os nós contendo os caracteres propriamente ditos estão sempre em nós folhas, como foi dito anteriormente.
+
+- Atribuição de Códigos: Cada símbolo é atribuído a um código binário único com base na árvore de Huffman. Os códigos são atribuídos seguindo o caminho da raiz da árvore até o símbolo desejado, onde 0 representa uma ramificação para a esquerda e 1 representa uma ramificação para a direita.
+
+- Codificação: O conjunto de dados original é então substituído pelos códigos de Huffman correspondentes. Os símbolos são substituídos pelos códigos binários ao realizar a compressão. Por exemplo, a codificação binária para o conjuto da letra E + F é 011, pois, partindo da raíz da árvore, até chegar ao nó que contém o conjunto E + F, o caminho é 1 para a esquerda e 2 para a direita.
+
+<h4 align = center>👨‍💻 IMPLEMENTAÇÂO DA CODIFICAÇÂO DE HUFFMAN</h4>
+
+Seguindo o passo a passo, a implementação começa com a contagem da frequência dos caracteres presentes no texto, essa função está implementada no arquivo <b>Functions.cpp</b>
+
+```c++
+unordered_map<char, int> ContaFrequencia_char(const string &texto) {
+    unordered_map < char, int > caracteres;
+
+    for (char c : texto) {
+        if (caracteres.find(c) == caracteres.end()) {
+            caracteres[c] = 1;
+        } else {
+            caracteres[c]++;
+        }
+    }
+
+    return caracteres;
+}
+```
+
+Essa função recebe um texto como parâmetro e itera caractere a caractere, contando a frequencia dessa letra e armazenando em um unordered_map.
+
+<b><p align = center>Huffman.hpp</p></b>
+
+Nesse arquivo, as estruturas que vão compor a construção da árvore de Huffman são criadas:
+
+```c++
+struct NoHuffmann
+{
+    char letra;
+    int peso;
+
+    NoHuffmann* esq;
+    NoHuffmann* dir;
+
+    NoHuffmann(char l, int p) : letra(l), peso(p), esq(nullptr), dir(nullptr){}
+};
+```
+A struct NoHuffman contém a estrutura do nós que vão compor a árvore. A variável do tipo char armaneza o simbolo, e a variável inteira armazena o peso daquele simbolo na árvore.
+
+```c++
+struct Compara_NO {
+    bool operator()(NoHuffmann* a, NoHuffmann* b){
+        return a->peso > b->peso;
+    }
+};
+```
+A struct Compara_NO apenas armazena a função que será usada para comparar o peso entre dois nós. Ela será usada no processo de construção da árvore.
+
+<b><p align = center>Huffman.cpp</p></b>
+
+Nesse arquivo, a implementação das funções que compõem a codificação de Huffman é realizada
+
+Continuando com o passo a passo, após a contagem da frequencia dos caracteres, a função que realiza a construção da árvore é implementada:
+
+```c++
+NoHuffmann* ConstruirArvore(const unordered_map<char, int>& frequencia){
+    priority_queue<NoHuffmann*, vector<NoHuffmann*> ,Compara_NO> filaPrioridade;
+
+    for(const auto& item : frequencia){
+        filaPrioridade.push(new NoHuffmann(item.first, item.second));
+    }
+
+    while(filaPrioridade.size() > 1){
+        NoHuffmann* esq = filaPrioridade.top();
+        filaPrioridade.pop();
+
+        NoHuffmann* dir = filaPrioridade.top();
+        filaPrioridade.pop();
+
+        NoHuffmann* pai = new NoHuffmann('\0', esq->peso + dir->peso);
+        pai->esq = esq;
+        pai->dir = dir;
+
+        filaPrioridade.push(pai);
+    }
+
+    return filaPrioridade.top();
+}
+```
+De forma geral, essa função cria a árvore de Huffman usando uma fila de prioridade. Essa fila de prioridade armazena ponteiros para os nós, e é representada por um vector. Note que, a struct Compara_NO é utilizada para definir a regra de prioridade na fila. A árvore é montada de forma que os nós com frequências mais baixas têm prioridade mais alta na fila. Ela combina os nós de menor frequência até que toda a árvore seja construída e, em seguida, retorna a raiz da árvore que será um caractere nulo, apenas com o endereçamento dos ponteiros para que a árvore tenha a referência de início. Note que, a raíz da árvore de Huffman de exemplo também apresenta um caractere nulo.
+
+Com a árvore montada, o próximo passo é montar uma espécie de dicionário, esse dicionário será usado para consultar o código binário.
+
+```c++
+void gerarCodigosHuffman(NoHuffmann* raiz, string codigo, unordered_map<char, string>& codigos){
+    if(!raiz){
+        return;
+    }
+
+    if(raiz->letra != '\0'){
+        codigos[raiz->letra] = codigo;
+    }
+
+    gerarCodigosHuffman(raiz->esq, codigo + "0", codigos);
+    gerarCodigosHuffman(raiz->dir, codigo + "1", codigos);
+}
+```
+
+A primeira verificação serve para conferir se um nó é nulo, isso serve como condição de parada da recurssão.
+
+A proxima verificação verifica se o caractere de um nó não é nulo, nesse caso, atribuímos o código ao caractere em um unordered_map.
+
+A recursividade faz justamente o papel de "mapear" idas para a esquerda com o código 0 e idas para a direita com o código 1.
+
+Com os códigos para cada símbolo já armazenados em um unordered_map, a consulta para a codificação binária de uma dada palavra pode ocorrer.
+
+```c++
+string Codificar(const string& palavra, unordered_map<char, string>& codigos){
+    string codigo = "";
+
+    for(char c : palavra){
+        if(codigos.find(c) != codigos.end()){
+            codigo += codigos.at(c);
+        }
+    }
+
+    return codigo;
+}
+```
+
+É justamente isso que a função Codificar faz, ela recebe a palavra a ser codificada e itera caractere a caractere, verificando o código daquele símbolo e montando o código para a palavra.
+
+<h2 align = center>💡 RESOLUÇÃO DO PROBLEMA</h2>
+
+Para a realização do processamento do/dos textos, todas as estruturas descritas anteriormente serão utilizadas.
+
+Além das estruturas já descritas, a estrutura do contador de palavras será utilizado. A documentação do contador de palavras pode ser acessado <a href="https://github.com/Lokinha92/counting_word_frequency">AQUI</a>
+
+
