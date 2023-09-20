@@ -903,3 +903,98 @@ A contagem de tempo decorrente para as operações envolvendo cada uma das árvo
 A intenção é comparar os tempos, e verificar qual das árvores fornece um processamento mais rápido.
 
 <h2 align = center>📈 TESTES E RESULTADOS</h2>
+
+Durante os testes, todos os textos de referência e as seguintes palavras para pesquisa foram usadas:
+
+<table align = center>
+        <tr>
+            <td>teoria</td>
+        </tr>
+        <tr>
+            <td>filosofia</td>
+        </tr>
+        <tr>
+            <td>codificação</td>
+        </tr>
+        <tr>
+            <td>estrutura</td>
+        </tr>
+        <tr>
+            <td>programação</td>
+        </tr>
+        <tr>
+            <td>linguagem</td>
+        </tr>
+        <tr>
+            <td>computacional</td>
+        </tr>
+        <tr>
+            <td>sistemas</td>
+        </tr>
+        <tr>
+            <td>operacionais</td>
+        </tr>
+        <tr>
+            <td>redes</td>
+        </tr>
+        <tr>
+            <td>telecomunicações</td>
+        </tr>
+        <tr>
+            <td>internet</td>
+        </tr>
+        <tr>
+            <td>planeta</td>
+        </tr>
+        <tr>
+            <td>político</td>
+        </tr>
+        <tr>
+            <td>cultural</td>
+        </tr>
+        <tr>
+            <td>religioso</td>
+        </tr>
+        <tr>
+            <td>econômica</td>
+        </tr>
+        <tr>
+            <td>socialista</td>
+        </tr>
+        <tr>
+            <td>desigualdade</td>
+        </tr>
+        <tr>
+            <td>justiça</td>
+        </tr>
+        <tr>
+            <td>direito</td>
+        </tr>
+        <tr>
+            <td>legislação</td>
+        </tr>
+        <tr>
+            <td>constituição</td>
+        </tr>
+        <tr>
+            <td>normativa</td>
+        </tr>
+    </table>
+Para comparar o processamento utilizando árovores binárias e árvores AVL, o algoritmo foi executado 10 vezes e os tempos de execução foram colocados na tabela a seguir:
+
+A média de tempo para o processamento com árvores binárias foi de:  segundos
+
+A média de tempo para o processamento com árvores AVL foi de:  segundos
+
+Essa diferença se deve, justamente, pelo processo de auto-balanceamento das árvores AVL. Uma árvore AVL é capaz de se manter melhor balanceada em relação à árvores binárias, fazendo com que o custo de pesquisa na estrutura seja proporcional a O(log n). Em uma situação havendo mais palavras a serem pesquisadas, mais textos e textos maiores, e mais palavras a serem insridas nas árvores, essa difrença no tempo se mostrará cada vez mais significativa.
+
+<h2 align = center>🔧 Compilação e execução </h2>
+</h2>
+      
+
+<b>No terminal, navegue até a pasta src:</b>
+
+| Comando                |  Função                                                                                           |                     
+| -----------------------| ------------------------------------------------------------------------------------------------- |                                     
+|  `g++ main.cpp functions.cpp Arvore_binaria.cpp HeapMAX.cpp Arvore_AVL.cpp Huffman.cpp`                | Executa a compilação do programa utilizando o g++
+|  `./a.out`            | Executa o programa após a compilação         
