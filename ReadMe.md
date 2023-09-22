@@ -5,7 +5,7 @@
 
 <h2 align = center>  🧩 OBJETIVO </h2>
 
-<p><strong>Demonstrar e comparar o funcionamento dos métodos de inserção, impressão e pesquisa nas estruturas de Arvore Binária e Arvore AVL. Neste algoritmo também é demonstrado o funcionamento da codificação de Huffman para codificação binária de palavras. </strong></p>
+<p><strong>Demonstrar e comparar o funcionamento dos métodos de inserção e impressão. nas estruturas de Arvore Binária e Arvore AVL. Neste algoritmo também é demonstrado o funcionamento da codificação de Huffman para codificação binária de palavras. </strong></p>
 
 <h2 align = center>  ❓ APRESENTAÇÃO DO PROBLEMA: </h2> 
 
@@ -680,7 +680,6 @@ void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>> &par_nome
 ---
 
 ```c++
-
 void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>> &par_nome_texto, const string &palavra_pesq, int NUM_SUGESTOES) {
     for (const auto &par : par_nome_texto) {
         if (NoTexto(par.second, palavra_pesq)) {
