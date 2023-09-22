@@ -428,27 +428,11 @@ Neste exemplo, a árvore de huffman foi montada para um conjunto contendo os car
 
 - Codificação: O conjunto de dados original é então substituído pelos códigos de Huffman correspondentes. Os símbolos são substituídos pelos códigos binários ao realizar a compressão. Por exemplo, a codificação binária para o conjuto da letra E + F é 011, pois, partindo da raíz da árvore, até chegar ao nó que contém o conjunto E + F, o caminho é 1 para a esquerda e 2 para a direita.
 
-<h4 align = center>👨‍💻 IMPLEMENTAÇÂO DA CODIFICAÇÂO DE HUFFMAN</h4>
+É possível expandir a lógica da construção da árvore de huffman para um texto todo. A partir da contagem da ocorrência das palavras em um texto, a árvore é montada seguindo os mesmos passos descritos acima, garantindo que as palavras com maior ocorrência esejam mais próximas da raiz, enquanto palavras com menor ocorrência esão mais profundos.
 
-Seguindo o passo a passo, a implementação começa com a contagem da frequência dos caracteres presentes no texto, essa função está implementada no arquivo <b>Functions.cpp</b>
+Essa foi a lógica aplicada para essa implementação.
 
-```c++
-unordered_map<char, int> ContaFrequencia_char(const string &texto) {
-    unordered_map < char, int > caracteres;
-
-    for (char c : texto) {
-        if (caracteres.find(c) == caracteres.end()) {
-            caracteres[c] = 1;
-        } else {
-            caracteres[c]++;
-        }
-    }
-
-    return caracteres;
-}
-```
-
-Essa função recebe um texto como parâmetro e itera caractere a caractere, contando a frequencia dessa letra e armazenando em um unordered_map.
+<h4 align = center>👨‍💻 IMPLEMENTAÇÂO DA CODIFICAÇÃO DE HUFFMAN</h4>
 
 <b><p align = center>Huffman.hpp</p></b>
 
@@ -457,34 +441,32 @@ Nesse arquivo, as estruturas que vão compor a construção da árvore de Huffma
 ```c++
 struct NoHuffmann
 {
-    char letra;
-    int peso;
+    string palavra;
+    int freq;
 
     NoHuffmann* esq;
     NoHuffmann* dir;
 
-    NoHuffmann(char l, int p) : letra(l), peso(p), esq(nullptr), dir(nullptr){}
+    NoHuffmann(string p, int f) : palavra(p), freq(f), esq(nullptr), dir(nullptr){}
 };
 ```
-A struct NoHuffman contém a estrutura do nós que vão compor a árvore. A variável do tipo char armaneza o simbolo, e a variável inteira armazena o peso daquele simbolo na árvore.
+A struct NoHuffman contém a estrutura do nós que vão compor a árvore. A variável do tipo string armaneza a palavra, e a variável inteira armazena a frequencia daquela palavra/conjunto na árvore.
 
 ```c++
 struct Compara_NO {
     bool operator()(NoHuffmann* a, NoHuffmann* b){
-        return a->peso > b->peso;
+        return a->freq > b->freq;
     }
 };
 ```
-A struct Compara_NO apenas armazena a função que será usada para comparar o peso entre dois nós. Ela será usada no processo de construção da árvore.
+A struct Compara_NO apenas armazena a função que será usada para comparar a frequencia armazenada em dois nós. Ela será usada no processo de construção da árvore.
 
 <b><p align = center>Huffman.cpp</p></b>
 
 Nesse arquivo, a implementação das funções que compõem a codificação de Huffman é realizada
 
-Continuando com o passo a passo, após a contagem da frequencia dos caracteres, a função que realiza a construção da árvore é implementada:
-
 ```c++
-NoHuffmann* ConstruirArvore(const unordered_map<char, int>& frequencia){
+NoHuffmann* ConstruirArvore(const unordered_map<string, int>& frequencia){
     priority_queue<NoHuffmann*, vector<NoHuffmann*> ,Compara_NO> filaPrioridade;
 
     for(const auto& item : frequencia){
@@ -498,7 +480,7 @@ NoHuffmann* ConstruirArvore(const unordered_map<char, int>& frequencia){
         NoHuffmann* dir = filaPrioridade.top();
         filaPrioridade.pop();
 
-        NoHuffmann* pai = new NoHuffmann('\0', esq->peso + dir->peso);
+        NoHuffmann* pai = new NoHuffmann("", esq->freq + dir->freq);
         pai->esq = esq;
         pai->dir = dir;
 
@@ -507,19 +489,20 @@ NoHuffmann* ConstruirArvore(const unordered_map<char, int>& frequencia){
 
     return filaPrioridade.top();
 }
-```
-De forma geral, essa função cria a árvore de Huffman usando uma fila de prioridade. Essa fila de prioridade armazena ponteiros para os nós, e é representada por um vector. Note que, a struct Compara_NO é utilizada para definir a regra de prioridade na fila. A árvore é montada de forma que os nós com frequências mais baixas têm prioridade mais alta na fila. Ela combina os nós de menor frequência até que toda a árvore seja construída e, em seguida, retorna a raiz da árvore que será um caractere nulo, apenas com o endereçamento dos ponteiros para que a árvore tenha a referência de início. Note que, a raíz da árvore de Huffman de exemplo também apresenta um caractere nulo.
 
-Com a árvore montada, o próximo passo é montar uma espécie de dicionário, esse dicionário será usado para consultar o código binário.
+```
+De forma geral, essa função cria a árvore de Huffman usando uma fila de prioridade. Essa fila de prioridade armazena ponteiros para os nós, e é representada por um vector. Note que, a struct Compara_NO é utilizada para definir a regra de prioridade na fila. A árvore é montada de forma que os nós com frequências mais baixas têm prioridade mais alta na fila. Ela combina os nós de menor frequência até que toda a árvore seja construída e, em seguida, retorna a raiz da árvore que conterá uma string vazia, apenas com o endereçamento dos ponteiros para que a árvore tenha a referência de início. 
+
+Com a árvore montada, o próximo passo é construir uma espécie de dicionário, esse dicionário será usado para consultar o código binário de uma referida palavra gerado pela árvore de huffman.
 
 ```c++
-void gerarCodigosHuffman(NoHuffmann* raiz, string codigo, unordered_map<char, string>& codigos){
+void gerarCodigosHuffman(NoHuffmann* raiz, string codigo, unordered_map<string, string>& codigos){
     if(!raiz){
         return;
     }
 
-    if(raiz->letra != '\0'){
-        codigos[raiz->letra] = codigo;
+    if(!raiz->palavra.empty()){
+        codigos[raiz->palavra] = codigo;
     }
 
     gerarCodigosHuffman(raiz->esq, codigo + "0", codigos);
@@ -529,27 +512,22 @@ void gerarCodigosHuffman(NoHuffmann* raiz, string codigo, unordered_map<char, st
 
 A primeira verificação serve para conferir se um nó é nulo, isso serve como condição de parada da recurssão.
 
-A proxima verificação verifica se o caractere de um nó não é nulo, nesse caso, atribuímos o código ao caractere em um unordered_map.
+A proxima verificação verifica se a string de um nó não é vaiza, nesse caso, atribuímos o código à palavra em um unordered_map.
 
 A recursividade faz justamente o papel de "mapear" idas para a esquerda com o código 0 e idas para a direita com o código 1.
 
-Com os códigos para cada símbolo já armazenados em um unordered_map, a consulta para a codificação binária de uma dada palavra pode ocorrer.
+Com os códigos para cada palavra já armazenados em um unordered_map, a consulta para a codificação binária de uma dada palavra pode ocorrer.
 
 ```c++
-string Codificar(const string& palavra, unordered_map<char, string>& codigos){
-    string codigo = "";
-
-    for(char c : palavra){
-        if(codigos.find(c) != codigos.end()){
-            codigo += codigos.at(c);
-        }
+string Codificar(const string& palavra, unordered_map<string, string>& codigos) {
+    if (codigos.find(palavra) != codigos.end()) {
+        return codigos.at(palavra);
+    } else {
+        return palavra;
     }
-
-    return codigo;
 }
 ```
-
-É justamente isso que a função Codificar faz, ela recebe a palavra a ser codificada e itera caractere a caractere, verificando o código daquele símbolo e montando o código para a palavra.
+É justamente isso que a função Codificar faz, ela recebe a palavra a ser codificada e verifica se há um código associado à essa palavra na árvore de huffman. Caso exista, o código é retornado, se não, a própria palavra é retornada.
 
 <h2 align = center>💡 RESOLUÇÃO DO PROBLEMA</h2>
 
@@ -599,7 +577,7 @@ bool NoTexto(const string &texto, const string &palavra) {
 Por fim, funções que percorrem as árvores binária e AVL e realizam a codificação binária da palavra presente no nó utilizando a árvore de huffman também foram adicionadas:
 
 ```c++
-void Huff_bt(No *no, unordered_map<char, string> codigos, ofstream &arquivo) {
+void Huff_bt(No *no, unordered_map<string, string> codigos, ofstream &arquivo) {
     if (no == nullptr) {
         return;
     }
@@ -612,7 +590,7 @@ void Huff_bt(No *no, unordered_map<char, string> codigos, ofstream &arquivo) {
     Huff_bt(no->dir, codigos, arquivo);
 }
 
-void Huff_AVL(No_AVL *no, unordered_map<char, string> codigos, ofstream &arquivo) {
+void Huff_AVL(No_AVL *no, unordered_map<string, string> codigos, ofstream &arquivo) {
     if (no == nullptr) {
         return;
     }
@@ -636,7 +614,7 @@ Primeiro, a ocorrência da palavra dada é verificada nos textos de referência.
 
 Com a contagem das palavras realizada, elas são inseridas na estrutura de Heap máxima para que as K palavras mais frequentes sejam classificadas. Caso a palavra em questão esteja entre as K mais frequentes, ela é removida e a proxima palavra mais frequente é adicionada à contagem.
 
-Após a heap estar devidamente montada, as k palavras são passadas para a árvore em questão. Com as árvores montadas, a árvore de huffman é montada e os códigos gerados referentes a cada símbolo é armazenado em um unordered_map. 
+Após a heap estar devidamente montada, as k palavras são passadas para a árvore em questão. Com as árvores contendo as K palavras mais frequentes, a árvore de huffman é montada e os códigos gerados referentes a cada palavra do texto é armazenado em um unordered_map.
 
 Dessa forma, é possível realizar o processo de pesquisa, fazendo a codificação binária das palavras presentes na árvore usando a arvore de huffman gerada para aquele texto.
 
@@ -670,13 +648,9 @@ void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>> &par_nome
 
             Heap_bt.cleanHEAP(Heap_bt);
 
-            frequencia.clear();
+            NoHuffmann *raiz = ConstruirArvore(frequencia);
 
-            unordered_map<char, int> freq_char = ContaFrequencia_char(par.second);
-
-            NoHuffmann *raiz = ConstruirArvore(freq_char);
-
-            unordered_map<char, string> codigos;
+            unordered_map<string, string> codigos;
             gerarCodigosHuffman(raiz, "", codigos);
 
             string caminho = "../output/output_binario.txt";
@@ -697,7 +671,7 @@ void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>> &par_nome
                 output.close();
             }
 
-            freq_char.clear();
+            frequencia.clear();
             codigos.clear();
         }
     }
@@ -734,13 +708,11 @@ void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>> &par_nome_tex
 
             Heap_avl.cleanHEAP(Heap_avl);
 
-            frequencia.clear();
-
             unordered_map<char, int> freq_char = ContaFrequencia_char(par.second);
 
-            NoHuffmann *raiz = ConstruirArvore(freq_char);
+            NoHuffmann *raiz = ConstruirArvore(frequencia);
 
-            unordered_map<char, string> codigos;
+            unordered_map<string, string> codigos;
             gerarCodigosHuffman(raiz, "", codigos);
 
             string caminho = "../output/output_avl.txt";
@@ -761,7 +733,7 @@ void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>> &par_nome_tex
                 output.close();
             }
 
-            freq_char.clear();
+            frequencia.clear();
             codigos.clear();
         }
     }
@@ -880,33 +852,15 @@ Após esses processos, o arquivo que contém as palavras a serem pesquisadas é 
 
     if (palavras.is_open()) {
         string palavra_pesq;
-        double tempo_total_binaria = 0.0;
-        double tempo_total_avl = 0.0;
 
         while (palavras >> palavra_pesq) {
-            auto start_binaria = chrono::high_resolution_clock::now();
             ProcessarPalavrasArvoreBinaria(par_nome_texto, palavra_pesq, NUM_SUGESTOES);
-            auto end_binaria = chrono::high_resolution_clock::now();
-            chrono::duration<double> elapsed_binaria = end_binaria - start_binaria;
-            tempo_total_binaria += elapsed_binaria.count();
 
-            auto start_avl = chrono::high_resolution_clock::now();
             ProcessarPalavrasArvoreAVL(par_nome_texto, palavra_pesq, NUM_SUGESTOES);
-            auto end_avl = chrono::high_resolution_clock::now();
-            chrono::duration<double> elapsed_avl = end_avl - start_avl;
-            tempo_total_avl += elapsed_avl.count();
         }
-
-        cout << "Tempo total decorrido com Árvore Binária: " << tempo_total_binaria << " segundos" << endl;
-        cout << "Tempo total decorrido com Árvore AVL: " << tempo_total_avl << " segundos" << endl;
-
         palavras.close();
     }
 ```
-
-A contagem de tempo decorrente para as operações envolvendo cada uma das árvores é feita utilizando a biblioteca <b>chrono</b> e mostrada no terminal, antes do fim da execução do algoritmo.
-
-A intenção é comparar os tempos, e verificar qual das árvores fornece um processamento mais rápido.
 
 <h2 align = center>📈 TESTES E RESULTADOS</h2>
 
@@ -929,70 +883,24 @@ Durante os testes, todos os textos de referência e as seguintes palavras para p
             <td>programação</td>
         </tr>
         <tr>
-            <td>linguagem</td>
-        </tr>
-        <tr>
-            <td>computacional</td>
-        </tr>
-        <tr>
-            <td>sistemas</td>
-        </tr>
-        <tr>
-            <td>operacionais</td>
-        </tr>
-        <tr>
-            <td>redes</td>
-        </tr>
-        <tr>
-            <td>telecomunicações</td>
-        </tr>
-        <tr>
-            <td>internet</td>
-        </tr>
-        <tr>
-            <td>planeta</td>
-        </tr>
-        <tr>
-            <td>político</td>
-        </tr>
-        <tr>
-            <td>cultural</td>
-        </tr>
-        <tr>
-            <td>religioso</td>
-        </tr>
-        <tr>
-            <td>econômica</td>
-        </tr>
-        <tr>
-            <td>socialista</td>
-        </tr>
-        <tr>
-            <td>desigualdade</td>
-        </tr>
-        <tr>
-            <td>justiça</td>
-        </tr>
-        <tr>
-            <td>direito</td>
-        </tr>
-        <tr>
-            <td>legislação</td>
-        </tr>
-        <tr>
-            <td>constituição</td>
-        </tr>
-        <tr>
-            <td>normativa</td>
+            <td>política</td>
         </tr>
     </table>
-Para comparar o processamento utilizando árovores binárias e árvores AVL, o algoritmo foi executado 10 vezes e os tempos de execução foram colocados na tabela a seguir:
 
-A média de tempo para o processamento com árvores binárias foi de:  segundos
+Após a execução, o output contendo o processamento para todas as palavras em cada um dos textos onde ela existe é gerado no formato já anteriormente descrito. Por exemlo, eis as saídas para o processamento da palavra "teoria":
 
-A média de tempo para o processamento com árvores AVL foi de:  segundos
+<div align = center> <img align src = /img/outBIN.png> </div>
 
-Essa diferença se deve, justamente, pelo processo de auto-balanceamento das árvores AVL. Uma árvore AVL é capaz de se manter melhor balanceada em relação à árvores binárias, fazendo com que o custo de pesquisa na estrutura seja proporcional a O(log n). Em uma situação havendo mais palavras a serem pesquisadas, mais textos e textos maiores, e mais palavras a serem insridas nas árvores, essa difrença no tempo se mostrará cada vez mais significativa.
+-- -
+<div align = center> <img align src = /img/outAVL.png> </div>
+
+O processamento ocorre da mesma forma em ambos os casos. A diferença pode ser notada ao reparar na ordem em que os elementos estão distribuídos na árvore. Essa diferença se dá devido às rotações realizadas pela árvore AVL a fim de se tornar balanceada.
+
+Apesar de ser a palavra mais frequente nos textos onde ela aparece, a palavra teoria não aparece na árvore, pois ela não deve ser "recomendada" 2 vezes. Isso mostra um bom funcionamento na estrutura de remoção da palavra caso ela esteja presente nas K mais frequentes.
+
+Também é notável que, para os textos correspondentes em cada arquivo de output, a codficação binária das palavras correspondem. Isso mostra um funcionamento compatível da montagem da árvore de Huffman.
+
+O mesmo processo é repetido para todas as palavras presentes no arquivo "palavras.txt".
 
 <h2 align = center>🔧 Compilação e execução </h2>
 </h2>

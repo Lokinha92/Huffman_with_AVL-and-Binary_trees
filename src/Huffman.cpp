@@ -41,7 +41,6 @@ string Codificar(const string& palavra, unordered_map<string, string>& codigos) 
     if (codigos.find(palavra) != codigos.end()) {
         return codigos.at(palavra);
     } else {
-        // Trate o caso em que a palavra não tem um código (comportamento padrão)
         return palavra;
     }
 }

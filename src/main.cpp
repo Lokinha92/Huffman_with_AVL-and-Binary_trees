@@ -52,26 +52,12 @@ int main() {
 
     if (palavras.is_open()) {
         string palavra_pesq;
-        double tempo_total_binaria = 0.0;
-        double tempo_total_avl = 0.0;
 
         while (palavras >> palavra_pesq) {
-            auto start_binaria = chrono::high_resolution_clock::now();
             ProcessarPalavrasArvoreBinaria(par_nome_texto, palavra_pesq, NUM_SUGESTOES);
-            auto end_binaria = chrono::high_resolution_clock::now();
-            chrono::duration<double> elapsed_binaria = end_binaria - start_binaria;
-            tempo_total_binaria += elapsed_binaria.count();
 
-            auto start_avl = chrono::high_resolution_clock::now();
             ProcessarPalavrasArvoreAVL(par_nome_texto, palavra_pesq, NUM_SUGESTOES);
-            auto end_avl = chrono::high_resolution_clock::now();
-            chrono::duration<double> elapsed_avl = end_avl - start_avl;
-            tempo_total_avl += elapsed_avl.count();
         }
-
-        cout << "Tempo total decorrido com Árvore Binária: " << tempo_total_binaria << " segundos" << endl;
-        cout << "Tempo total decorrido com Árvore AVL: " << tempo_total_avl << " segundos" << endl;
-
         palavras.close();
     }
     return 0;
