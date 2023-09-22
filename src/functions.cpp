@@ -143,7 +143,7 @@ void Apaga_output(const string &caminho) {
     }
 }
 
-void Huff_bt(No *no, unordered_map<char, string> codigos, ofstream &arquivo) {
+void Huff_bt(No *no, unordered_map<string, string> codigos, ofstream &arquivo) {
     if (no == nullptr) {
         return;
     }
@@ -156,7 +156,7 @@ void Huff_bt(No *no, unordered_map<char, string> codigos, ofstream &arquivo) {
     Huff_bt(no->dir, codigos, arquivo);
 }
 
-void Huff_AVL(No_AVL *no, unordered_map<char, string> codigos, ofstream &arquivo) {
+void Huff_AVL(No_AVL *no, unordered_map<string, string> codigos, ofstream &arquivo) {
     if (no == nullptr) {
         return;
     }
@@ -196,13 +196,9 @@ void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>> &par_nome
 
             Heap_bt.cleanHEAP(Heap_bt);
 
-            frequencia.clear();
+            NoHuffmann *raiz = ConstruirArvore(frequencia);
 
-            unordered_map<char, int> freq_char = ContaFrequencia_char(par.second);
-
-            NoHuffmann *raiz = ConstruirArvore(freq_char);
-
-            unordered_map<char, string> codigos;
+            unordered_map<string, string> codigos;
             gerarCodigosHuffman(raiz, "", codigos);
 
             string caminho = "../output/output_binario.txt";
@@ -223,7 +219,7 @@ void ProcessarPalavrasArvoreBinaria(const vector<pair<string, string>> &par_nome
                 output.close();
             }
 
-            freq_char.clear();
+            frequencia.clear();
             codigos.clear();
         }
     }
@@ -256,13 +252,11 @@ void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>> &par_nome_tex
 
             Heap_avl.cleanHEAP(Heap_avl);
 
-            frequencia.clear();
-
             unordered_map<char, int> freq_char = ContaFrequencia_char(par.second);
 
-            NoHuffmann *raiz = ConstruirArvore(freq_char);
+            NoHuffmann *raiz = ConstruirArvore(frequencia);
 
-            unordered_map<char, string> codigos;
+            unordered_map<string, string> codigos;
             gerarCodigosHuffman(raiz, "", codigos);
 
             string caminho = "../output/output_avl.txt";
@@ -283,7 +277,7 @@ void ProcessarPalavrasArvoreAVL(const vector<pair<string, string>> &par_nome_tex
                 output.close();
             }
 
-            freq_char.clear();
+            frequencia.clear();
             codigos.clear();
         }
     }

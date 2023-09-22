@@ -8,23 +8,23 @@ using namespace std;
 
 struct NoHuffmann
 {
-    char letra;
-    int peso;
+    string palavra;
+    int freq;
 
     NoHuffmann* esq;
     NoHuffmann* dir;
 
-    NoHuffmann(char l, int p) : letra(l), peso(p), esq(nullptr), dir(nullptr){}
+    NoHuffmann(string p, int f) : palavra(p), freq(f), esq(nullptr), dir(nullptr){}
 };
 
 struct Compara_NO {
     bool operator()(NoHuffmann* a, NoHuffmann* b){
-        return a->peso > b->peso;
+        return a->freq > b->freq;
     }
 };
 
-NoHuffmann* ConstruirArvore(const unordered_map<char, int>& frequencia);
+NoHuffmann* ConstruirArvore(const unordered_map<string, int>& frequencia);
 
-void gerarCodigosHuffman(NoHuffmann* raiz, string codigo, unordered_map<char, string>& codigos);
+void gerarCodigosHuffman(NoHuffmann* raiz, string codigo, unordered_map<string, string>& codigos);
 
-string Codificar(const string& palavra, unordered_map<char, string>& codigos);
+string Codificar(const string& palavra, unordered_map<string, string>& codigos);
